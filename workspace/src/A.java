@@ -6,13 +6,17 @@ public class A {
 		int[] index = new int[10];
 
 		for (int i = 0; i < arr.length; i++) {
+			
 			boolean bool = false;
+			
 			int a = (int) ( (Math.random() * 10)+1);
+			
 			for (int j = 0; j < i; j++) {
 				if (index[j] == a) {
 					bool = true;
 				}
 			}
+			
 			if (bool == true) {
 				i--;
 				continue;
