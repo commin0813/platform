@@ -3,12 +3,27 @@ public class A {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String[] arr = new String[10];
+		int[] index = new int[10];
 
 		for (int i = 0; i < arr.length; i++) {
-				arr[i] = "index : "+(int)(i+Math.random()*100);
+			boolean bool = false;
+			int a = (int) ( (Math.random() * 10)+1);
+			for (int j = 0; j < i; j++) {
+				if (index[j] == a) {
+					bool = true;
+				}
+			}
+			if (bool == true) {
+				i--;
+				continue;
+			}
+			
+			index[i] = a;
+			arr[i] = "index : " + a;
+
 		}
-		
-		for(String str : arr){
+
+		for (String str : arr) {
 			System.out.println(str);
 		}
 	}
