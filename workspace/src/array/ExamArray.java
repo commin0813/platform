@@ -105,6 +105,13 @@ public class ExamArray {
 			}
 			System.out.println();
 		}
+		char a[]=new char[10];
+		System.out.println("aa: "+a[0]);
+		int an [] =new int [100];
+		an[0]=1;
+		int b = an[0];
+		System.out.println(an.length);
+		int Ann[][] = new int [2][10];
 
 	}
 }
