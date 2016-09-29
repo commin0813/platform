@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 /*
  * Ranking Program Exam
- * developer by commin
+ * develope by commin
  * 
  * 어떤 프로그램을 만들것인가?
  * 5명의 학생의 정보(이름),점수(국어,영어,수학)를 입력 받아 평균을 내고 석차를 구하여 출력하는 프로그램.
