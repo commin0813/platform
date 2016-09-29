@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
  * 5명의 학생의 정보(이름),점수(국어,영어,수학)를 입력 받아 평균을 내고 석차를 구하여 출력하는 프로그램.
  * 
  * 주요 기술
- * 배열,제어문,java 입출력
+ * 배열,제어문,java 입출력,메서드
  * 
  */
 public class RankingPro {
@@ -52,19 +52,42 @@ public class RankingPro {
 			}
 		}
 
-		showTable(names, subject, scores);
-
 		// 석차 구하기
+		// 1번학생과 나머지를 비교하여1번학생보다 점수가 낮으면 상대방 래크를 +1, 2번학생이 점수가낮으면 2번학생 랭크+1
+		// 2번학생과 나머지를 비교하여 2번학생보다 점수가 낮으면 상대방 래크를 +1, 2번학생이 점수가낮으면 2번학생 랭크+1
+		// 마지막학생까지 바복하면 최종적으로 석차가 구해집니다.
+		for (int i = 0; i < student_size; i++) {
+			rank[i] = 1;// 일단 모든 랭크 값을 1로 초기화 합니다. 최초에는 모든 학생들이 1등입니다.
+		}
+
+		for (int i = 0; i < student_size; i++) {
+			double standard_student_score = scores[i][subject_size];//기준학생점수
+
+			for (int j = i; j < student_size; j++) {
+				double compare_student_score = scores[j][subject_size];//비교학생점수
+				if (standard_student_score < compare_student_score) {
+					rank[i]++;//기준학생이 점수가 납으므로 기준학생의 랭크를 +1해줍니다.
+				} else if (standard_student_score > compare_student_score) {
+					rank[j]++;//비교학생의 점수가 낮으므로 비교학생의 랭크를 +1해줍니다.
+				}
+			}
+		}
+
+		showTable(names, subject, scores, rank);
 
 	}
 
-	public static void showTable(String[] names, String[] subject, double[][] scores) {
+	// 입력한 내용을 테이블로 보여주는 메서드입니다. 여러번 사용될지도 모르는 기능은 이렇게 메서드로 만들어놓는 것이 편합니다.
+	public static void showTable(String[] names, String[] subject, double[][] scores, int[] rank) {
+		System.out.println();
 		System.out.print("이름   | ");
 		for (int i = 0; i < subject.length + 1; i++) {
 			if (i == subject.length) {
 				System.out.print("평균|   ");
+				System.out.print("석차|   ");
 				break;
 			}
+
 			System.out.print(subject[i] + "| ");
 
 		}
@@ -75,8 +98,9 @@ public class RankingPro {
 			for (int j = 0; j < scores[i].length; j++) {
 				System.out.print(scores[i][j] + "| ");
 			}
-			System.out.println();
+			System.out.println(rank[i]+"|");
 		}
+		System.out.println();
 	}
 
 	// 메서드를 사용해보기위해 억지로 넣었습니다.
