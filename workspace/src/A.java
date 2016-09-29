@@ -30,6 +30,9 @@ public class A {
 		for (String str : arr) {
 			System.out.println(str);
 		}
+		switch("안녕"){
+		case "안녕" : System.out.println("흐흐흐");break;
+		}
 	}
 
 }
