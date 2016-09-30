@@ -27,7 +27,7 @@ public class ClassExam_01 {
 
 	//ClassExam_01 클래스 안에 들어가는 member feild.
 	
-	public class ExClassA{}//class
+	public class ExClassA{}//class (class 안에 class는 inner class 라고합니다.)
 	
 	ClassExam_01(){ }//생성자
 	
