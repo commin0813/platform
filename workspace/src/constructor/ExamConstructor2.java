@@ -3,7 +3,7 @@ package constructor;
 public class ExamConstructor2 {
 	private int x,y;
 	
-	ExamConstructor2(int x , int y){
+	public ExamConstructor2(int x , int y){
 		this.x = x;
 		this.y = y;
 	}
