@@ -2,38 +2,40 @@ package page;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.border.EmptyBorder;
-import java.awt.GridLayout;
-import javax.swing.JLabel;
-import javax.swing.JRadioButton;
-import javax.swing.border.TitledBorder;
-import java.awt.Font;
-import java.awt.Insets;
 import javax.swing.JTextField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import javax.swing.border.SoftBevelBorder;
-import javax.swing.border.BevelBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
+
+import panel.Panel2CaramelWriter;
 
 public class Page2CaramelWriter extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-
+	private JTextField tv_businessName;
+	private JTextField tv_keyword;
+	private JTextField tv_detail_keyword;
+	private JTextArea ta_content;
+	private ButtonGroup group;
+	private Panel2CaramelWriter panel_writer;
 	/**
 	 * Launch the application.
 	 */
@@ -63,7 +65,7 @@ public class Page2CaramelWriter extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		ButtonGroup group = new ButtonGroup();
+		group = new ButtonGroup();
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel_input = new JPanel();
@@ -84,12 +86,13 @@ public class Page2CaramelWriter extends JFrame {
 		JRadioButton radio_embul = new JRadioButton("병원");
 		panel_1.add(radio_embul);
 		
+		JRadioButton radio_show = new JRadioButton("전시회");
+		panel_1.add(radio_show);
+		
 		group.add(radio_rest);
 		group.add(radio_food);
 		group.add(radio_embul);
-		
-		JRadioButton radio_show = new JRadioButton("전시회");
-		panel_1.add(radio_show);
+		group.add(radio_show);
 		
 		JPanel panel = new JPanel();
 		panel_input.add(panel, BorderLayout.CENTER);
@@ -123,14 +126,14 @@ public class Page2CaramelWriter extends JFrame {
 		gbc_lblNewLabel_1.gridy = 0;
 		panel_3.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.insets = new Insets(0, 0, 5, 0);
-		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField.gridx = 0;
-		gbc_textField.gridy = 1;
-		panel_3.add(textField, gbc_textField);
+		tv_businessName = new JTextField();
+		tv_businessName.setColumns(10);
+		GridBagConstraints gbc_tv_businessName = new GridBagConstraints();
+		gbc_tv_businessName.insets = new Insets(0, 0, 5, 0);
+		gbc_tv_businessName.fill = GridBagConstraints.HORIZONTAL;
+		gbc_tv_businessName.gridx = 0;
+		gbc_tv_businessName.gridy = 1;
+		panel_3.add(tv_businessName, gbc_tv_businessName);
 		
 		JLabel lblNewLabel = new JLabel("키워드");
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
@@ -140,14 +143,14 @@ public class Page2CaramelWriter extends JFrame {
 		gbc_lblNewLabel.gridy = 2;
 		panel_3.add(lblNewLabel, gbc_lblNewLabel);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
-		gbc_textField_1.insets = new Insets(0, 0, 5, 0);
-		gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_1.gridx = 0;
-		gbc_textField_1.gridy = 3;
-		panel_3.add(textField_1, gbc_textField_1);
+		tv_keyword = new JTextField();
+		tv_keyword.setColumns(10);
+		GridBagConstraints gbc_tv_keyword = new GridBagConstraints();
+		gbc_tv_keyword.insets = new Insets(0, 0, 5, 0);
+		gbc_tv_keyword.fill = GridBagConstraints.HORIZONTAL;
+		gbc_tv_keyword.gridx = 0;
+		gbc_tv_keyword.gridy = 3;
+		panel_3.add(tv_keyword, gbc_tv_keyword);
 		
 		JLabel label = new JLabel("세부키워드");
 		GridBagConstraints gbc_label = new GridBagConstraints();
@@ -157,13 +160,13 @@ public class Page2CaramelWriter extends JFrame {
 		gbc_label.gridy = 4;
 		panel_3.add(label, gbc_label);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		GridBagConstraints gbc_textField_2 = new GridBagConstraints();
-		gbc_textField_2.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_2.gridx = 0;
-		gbc_textField_2.gridy = 5;
-		panel_3.add(textField_2, gbc_textField_2);
+		tv_detail_keyword = new JTextField();
+		tv_detail_keyword.setColumns(10);
+		GridBagConstraints gbc_tv_detail_keyword = new GridBagConstraints();
+		gbc_tv_detail_keyword.fill = GridBagConstraints.HORIZONTAL;
+		gbc_tv_detail_keyword.gridx = 0;
+		gbc_tv_detail_keyword.gridy = 5;
+		panel_3.add(tv_detail_keyword, gbc_tv_detail_keyword);
 		
 		JPanel panel_2 = new JPanel();
 		panel_input.add(panel_2, BorderLayout.SOUTH);
@@ -171,6 +174,7 @@ public class Page2CaramelWriter extends JFrame {
 		JButton btnNewButton = new JButton("생성");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				create();
 			}
 		});
 		panel_2.setLayout(new GridLayout(0, 1, 0, 0));
@@ -180,8 +184,8 @@ public class Page2CaramelWriter extends JFrame {
 		contentPane.add(panel_content, BorderLayout.CENTER);
 		panel_content.setLayout(new BorderLayout(0, 0));
 		
-		JTextArea textArea = new JTextArea("",5,10);
-		JScrollPane jp = new JScrollPane(textArea);
+		ta_content = new JTextArea("",5,10);
+		JScrollPane jp = new JScrollPane(ta_content);
 		
 		panel_content.add(jp);
 		
@@ -197,8 +201,17 @@ public class Page2CaramelWriter extends JFrame {
 		JMenuItem mntmHelp = new JMenuItem("Help");
 		mnInfo.add(mntmHelp);
 		
+		panel_writer = Panel2CaramelWriter.getInstance();
 		
-	
+		
 	}
 
+
+	private void create(){
+		panel_writer.create(group,tv_businessName,tv_keyword,tv_detail_keyword, ta_content);
+	}
+	
+	public interface WriterIf{
+		public void create(ButtonGroup radio_group,JTextField tv_businessName,JTextField tv_keyword,JTextField tv_detail_keyword,JTextArea ta_content);
+	}
 }

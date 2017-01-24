@@ -26,6 +26,7 @@ interface OpenCloseIf {
 	public void close();
 }
 interface PaintIf {
+	int s=1;
 	public void Red();
 
 	public void Blue();
