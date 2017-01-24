@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import model.Model2Caramel;
 import page.CaramelWriterProperties;
 import page.Page2CaramelWriter.WriterIf;
 
@@ -24,6 +25,7 @@ public class Panel2CaramelWriter implements WriterIf{
 	@Override
 	public void create(ButtonGroup radio_group,JTextField tv_businessName,JTextField tv_keyword,JTextField tv_detail_keyword,JTextArea ta_content) {
 		// TODO Auto-generated method stub
+		/////////////////////CHECK//////////////////////
 		if(radio_group.isSelected(null)){
 			new JOptionPane().showMessageDialog(null, "분류는 필수 입력값입니다.");
 			return;
@@ -33,6 +35,11 @@ public class Panel2CaramelWriter implements WriterIf{
 			return;
 		}
 		
+		////////////////////INIT ////////////////////////
+		
+		String businessName = tv_businessName.getText().toString();
+		String keyword = tv_keyword.getText().toString();
+		String detail_keyword = tv_detail_keyword.getText().toString();
 		
 		Enumeration<AbstractButton> enums = radio_group.getElements();
 		String classification = "";
@@ -45,7 +52,25 @@ public class Panel2CaramelWriter implements WriterIf{
 			}
 		}
 		
-		ta_content.setText(CaramelWriterProperties.tag_p_start+classification+CaramelWriterProperties.tag_p_end);
+		////////////// CREATE ///////////////////
+		
+		Model2Caramel model =  new Model2Caramel();
+		model.setBusinessName(businessName);
+		model.setDetail_keyword(detail_keyword);
+		model.setKeyword(detail_keyword);
+		
+		
+		
+		if(classification.equals(CaramelWriterProperties.CLASSIFICATION_FOOD)){
+			
+		}else if(classification.equals(CaramelWriterProperties.CLASSIFICATION_HOSPITAL)){
+			
+		}else if(classification.equals(CaramelWriterProperties.CLASSIFICATION_RESTAURANT)){
+			
+		}
+		
+		///////////////////////RESULT ///////////////////
+		ta_content.append(CaramelWriterProperties.TAG_P_START+classification+CaramelWriterProperties.TAG_P_END+CaramelWriterProperties.MARGIN);
 		
 	}
 	

@@ -7,6 +7,9 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -77,22 +80,18 @@ public class Page2CaramelWriter extends JFrame {
 		panel_input.add(panel_1, BorderLayout.NORTH);
 		panel_1.setLayout(new GridLayout(0, 3, 0, 0));
 		
-		JRadioButton radio_rest = new JRadioButton("식당");
-		panel_1.add(radio_rest);
+		JRadioButton radio_restaurant = new JRadioButton("식당");
+		panel_1.add(radio_restaurant);
 		
 		JRadioButton radio_food = new JRadioButton("음식");
 		panel_1.add(radio_food);
 		
-		JRadioButton radio_embul = new JRadioButton("병원");
-		panel_1.add(radio_embul);
+		JRadioButton radio_hospital = new JRadioButton("병원");
+		panel_1.add(radio_hospital);
 		
-		JRadioButton radio_show = new JRadioButton("전시회");
-		panel_1.add(radio_show);
-		
-		group.add(radio_rest);
+		group.add(radio_restaurant);
 		group.add(radio_food);
-		group.add(radio_embul);
-		group.add(radio_show);
+		group.add(radio_hospital);
 		
 		JPanel panel = new JPanel();
 		panel_input.add(panel, BorderLayout.CENTER);
@@ -178,6 +177,22 @@ public class Page2CaramelWriter extends JFrame {
 			}
 		});
 		panel_2.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JButton btnCopy = new JButton("copy");
+		btnCopy.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+				String copyString = ta_content.getText().toString();
+				if(copyString != null)
+				{
+				     StringSelection contents = new StringSelection(copyString);
+				     clipboard.setContents(contents, null);
+				}
+			}
+		});
+		panel_2.add(btnCopy);
 		panel_2.add(btnNewButton);
 		
 		JPanel panel_content = new JPanel();
