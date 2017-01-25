@@ -92,14 +92,14 @@ public class Page2CaramelWriter extends JFrame {
 		JRadioButton radio_restaurant = new JRadioButton("식당");
 		panel_1.add(radio_restaurant);
 		
-		JRadioButton radio_food = new JRadioButton("음식");
-		panel_1.add(radio_food);
+		JRadioButton radio_normal = new JRadioButton("일반");
+		panel_1.add(radio_normal);
 		
 		JRadioButton radio_hospital = new JRadioButton("병원");
 		panel_1.add(radio_hospital);
 		
 		group.add(radio_restaurant);
-		group.add(radio_food);
+		group.add(radio_normal);
 		group.add(radio_hospital);
 		
 		JPanel panel = new JPanel();

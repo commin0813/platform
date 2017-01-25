@@ -8,7 +8,7 @@ public class CaramelWriterProperties {
 	
 	
 	public static String CLASSIFICATION_HOSPITAL = "병원";
-	public static String CLASSIFICATION_FOOD = "음식";
+	public static String CLASSIFICATION_NORMAL = "일반";
 	public static String CLASSIFICATION_RESTAURANT = "식당";
 	
 	

@@ -12,6 +12,7 @@ import model.Model2Caramel;
 import page.CaramelWriterProperties;
 import page.Page2CaramelWriter.WriterIf;
 import util.Util2Hospital;
+import util.Util2Normal;
 import util.Util2Rest;
 
 public class Panel2CaramelWriter implements WriterIf {
@@ -34,8 +35,8 @@ public class Panel2CaramelWriter implements WriterIf {
 
 		////////////// CREATE ///////////////////
 
-		if (classification.equals(CaramelWriterProperties.CLASSIFICATION_FOOD)) {
-
+		if (classification.equals(CaramelWriterProperties.CLASSIFICATION_NORMAL)) {
+			model = Util2Normal.getContent(model);
 		} else if (classification.equals(CaramelWriterProperties.CLASSIFICATION_HOSPITAL)) {
 			model = Util2Hospital.getContent(model);
 		} else if (classification.equals(CaramelWriterProperties.CLASSIFICATION_RESTAURANT)) {
