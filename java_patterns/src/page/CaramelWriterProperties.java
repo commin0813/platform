@@ -10,4 +10,9 @@ public class CaramelWriterProperties {
 	public static String CLASSIFICATION_HOSPITAL = "병원";
 	public static String CLASSIFICATION_FOOD = "음식";
 	public static String CLASSIFICATION_RESTAURANT = "식당";
+	
+	
+	public static int SUBJECT_COUNT = 5; 
+	
+	public static String PHRASES = "<p><span style=\"font-size: 18pt; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);\">[이 포스팅은 소정의 원고료를 제공받아 작성되었습니다.]</span></p>";
 }

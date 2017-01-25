@@ -12,14 +12,18 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Enumeration;
 
+import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
@@ -28,6 +32,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
+import model.Model2Caramel;
 import panel.Panel2CaramelWriter;
 
 public class Page2CaramelWriter extends JFrame {
@@ -39,6 +44,10 @@ public class Page2CaramelWriter extends JFrame {
 	private JTextArea ta_content;
 	private ButtonGroup group;
 	private Panel2CaramelWriter panel_writer;
+	private JTextField tv_phone_num;
+	private JTextField tv_address;
+	
+	private JCheckBox chckbxExist;
 	/**
 	 * Launch the application.
 	 */
@@ -112,9 +121,9 @@ public class Page2CaramelWriter extends JFrame {
 		panel.add(panel_3, gbc_panel_3);
 		GridBagLayout gbl_panel_3 = new GridBagLayout();
 		gbl_panel_3.columnWidths = new int[]{0, 0};
-		gbl_panel_3.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
+		gbl_panel_3.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_panel_3.columnWeights = new double[]{1.0, Double.MIN_VALUE};
-		gbl_panel_3.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_3.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, Double.MIN_VALUE};
 		panel_3.setLayout(gbl_panel_3);
 		
 		JLabel lblNewLabel_1 = new JLabel("상호명");
@@ -160,12 +169,64 @@ public class Page2CaramelWriter extends JFrame {
 		panel_3.add(label, gbc_label);
 		
 		tv_detail_keyword = new JTextField();
+		tv_detail_keyword.setEnabled(false);
+		tv_detail_keyword.setEditable(false);
 		tv_detail_keyword.setColumns(10);
 		GridBagConstraints gbc_tv_detail_keyword = new GridBagConstraints();
+		gbc_tv_detail_keyword.insets = new Insets(0, 0, 5, 0);
 		gbc_tv_detail_keyword.fill = GridBagConstraints.HORIZONTAL;
 		gbc_tv_detail_keyword.gridx = 0;
 		gbc_tv_detail_keyword.gridy = 5;
 		panel_3.add(tv_detail_keyword, gbc_tv_detail_keyword);
+		
+		JLabel label_1 = new JLabel("전화번호");
+		GridBagConstraints gbc_label_1 = new GridBagConstraints();
+		gbc_label_1.anchor = GridBagConstraints.WEST;
+		gbc_label_1.insets = new Insets(0, 0, 5, 0);
+		gbc_label_1.gridx = 0;
+		gbc_label_1.gridy = 6;
+		panel_3.add(label_1, gbc_label_1);
+		
+		tv_phone_num = new JTextField();
+		tv_phone_num.setColumns(10);
+		GridBagConstraints gbc_tv_phone_num = new GridBagConstraints();
+		gbc_tv_phone_num.insets = new Insets(0, 0, 5, 0);
+		gbc_tv_phone_num.fill = GridBagConstraints.HORIZONTAL;
+		gbc_tv_phone_num.gridx = 0;
+		gbc_tv_phone_num.gridy = 7;
+		panel_3.add(tv_phone_num, gbc_tv_phone_num);
+		
+		JLabel label_2 = new JLabel("주소");
+		GridBagConstraints gbc_label_2 = new GridBagConstraints();
+		gbc_label_2.anchor = GridBagConstraints.WEST;
+		gbc_label_2.insets = new Insets(0, 0, 5, 0);
+		gbc_label_2.gridx = 0;
+		gbc_label_2.gridy = 8;
+		panel_3.add(label_2, gbc_label_2);
+		
+		tv_address = new JTextField();
+		tv_address.setColumns(10);
+		GridBagConstraints gbc_tv_address = new GridBagConstraints();
+		gbc_tv_address.insets = new Insets(0, 0, 5, 0);
+		gbc_tv_address.fill = GridBagConstraints.HORIZONTAL;
+		gbc_tv_address.gridx = 0;
+		gbc_tv_address.gridy = 9;
+		panel_3.add(tv_address, gbc_tv_address);
+		
+		JPanel panel_4 = new JPanel();
+		GridBagConstraints gbc_panel_4 = new GridBagConstraints();
+		gbc_panel_4.anchor = GridBagConstraints.WEST;
+		gbc_panel_4.insets = new Insets(0, 0, 5, 0);
+		gbc_panel_4.fill = GridBagConstraints.VERTICAL;
+		gbc_panel_4.gridx = 0;
+		gbc_panel_4.gridy = 10;
+		panel_3.add(panel_4, gbc_panel_4);
+		
+		JLabel label_3 = new JLabel("대가성문구");
+		panel_4.add(label_3);
+		
+		chckbxExist = new JCheckBox("");
+		panel_4.add(chckbxExist);
 		
 		JPanel panel_2 = new JPanel();
 		panel_input.add(panel_2, BorderLayout.SOUTH);
@@ -173,6 +234,7 @@ public class Page2CaramelWriter extends JFrame {
 		JButton btnNewButton = new JButton("생성");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ta_content.setText("");
 				create();
 			}
 		});
@@ -223,10 +285,42 @@ public class Page2CaramelWriter extends JFrame {
 
 
 	private void create(){
-		panel_writer.create(group,tv_businessName,tv_keyword,tv_detail_keyword, ta_content);
+		/////////////////////CHECK//////////////////////
+		if(group.isSelected(null)){
+			new JOptionPane().showMessageDialog(null, "분류는 필수 입력값입니다.");
+			return;
+		}
+		if(tv_businessName.getText().toString().equals("") || tv_businessName.getText().toString() == null){
+			new JOptionPane().showMessageDialog(null, "상호명은 필수 입력값입니다.");
+			return;
+		}
+		
+		Model2Caramel model = new Model2Caramel();
+		
+		model.setAddress(tv_address.getText().toString());
+		model.setBusinessName(tv_businessName.getText().toString());
+		model.setDetail_keyword(tv_detail_keyword.getText().toString());
+		model.setIsph(chckbxExist.isSelected());
+		model.setKeyword(tv_keyword.getText().toString());
+		model.setPhone_num(tv_phone_num.getText().toString());
+		
+		Enumeration<AbstractButton> enums = group.getElements();
+		String classification = "";
+		
+		while(enums.hasMoreElements()){
+			AbstractButton ab = enums.nextElement();
+			if(ab.isSelected()){
+				classification = ab.getText().toString();
+				break;
+			}
+		}
+		model.setClassification(classification);
+		
+		
+		panel_writer.create(model, ta_content);
 	}
 	
 	public interface WriterIf{
-		public void create(ButtonGroup radio_group,JTextField tv_businessName,JTextField tv_keyword,JTextField tv_detail_keyword,JTextArea ta_content);
+		public void create(Model2Caramel model,JTextArea ta_content);
 	}
 }
