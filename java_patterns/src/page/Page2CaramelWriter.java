@@ -77,7 +77,7 @@ public class Page2CaramelWriter extends JFrame {
 	public Page2CaramelWriter() {
 		setTitle("Caramel Writer");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 667, 527);
+		setBounds(100, 100, 1000, 700);
 
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -246,6 +246,18 @@ public class Page2CaramelWriter extends JFrame {
 			}
 		});
 		panel_2.setLayout(new GridLayout(0, 1, 0, 0));
+				
+				JPanel panel_7 = new JPanel();
+				panel_2.add(panel_7);
+				
+						JLabel lblNewLabel_2 = new JLabel("글자 수 : ");
+						panel_7.add(lblNewLabel_2);
+						
+								textField = new JTextField();
+								panel_7.add(textField);
+								textField.setText("0");
+								textField.setEditable(false);
+								textField.setColumns(10);
 
 		JPanel panel_5 = new JPanel();
 		panel_2.add(panel_5);
@@ -306,20 +318,6 @@ public class Page2CaramelWriter extends JFrame {
 		JScrollPane jp = new JScrollPane(ta_content);
 
 		panel_content.add(jp);
-
-		JPanel panel_6 = new JPanel();
-		panel_6.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panel_6.setBackground(Color.ORANGE);
-		panel_content.add(panel_6, BorderLayout.SOUTH);
-
-		JLabel lblNewLabel_2 = new JLabel("글자 수 : ");
-		panel_6.add(lblNewLabel_2);
-
-		textField = new JTextField();
-		textField.setText("0");
-		textField.setEditable(false);
-		panel_6.add(textField);
-		textField.setColumns(10);
 
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setMargin(new Insets(0, 0, 10, 0));

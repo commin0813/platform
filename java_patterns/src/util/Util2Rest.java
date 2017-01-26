@@ -64,6 +64,12 @@ public class Util2Rest {
 				CaramelWriterProperties.TAG_P_START+"소문난 맛집! "+keyword +" "+ businessName + "이 인기"+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START+"드디어 가다! "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
 				
+				CaramelWriterProperties.TAG_P_START+"인생 맛집~ "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"인생 맛집~ "+keyword +" "+ businessName + ", 여긴 꼭 갑시다"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"대박 맛집~ "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"대박 맛집~ "+keyword +" "+ businessName + ", 꼭 가세요!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"[대박 맛집] "+keyword +" "+ businessName + ", 꼭 먹어보세요!"+CaramelWriterProperties.TAG_P_END,
+				
 				CaramelWriterProperties.TAG_P_START+keyword+"를 찾으신다면" +" "+ businessName + ", 강추드려요"+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START+keyword+"를 찾는다면" +" "+ businessName + ", 여기 뿐"+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START+keyword+"를 찾는다면" +" "+ businessName + "가 좋아요^^"+CaramelWriterProperties.TAG_P_END,
