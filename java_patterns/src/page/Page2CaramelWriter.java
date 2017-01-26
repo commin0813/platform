@@ -356,10 +356,6 @@ public class Page2CaramelWriter extends JFrame {
 		content = content.replaceAll("</p>", "");
 		content = content.replaceAll("<br >", "");
 		content = content.replaceAll("<span>", "");
-		content = content.replaceAll("< style=\"font-size: 24pt; color: rgb(255, 0, 0);\">", "");
-		
-		
-		content = content.replaceAll("< style=\"font-size: 18pt; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);\">", "");
 		
 		content = content.trim();
 		int cnt = 0;
