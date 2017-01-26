@@ -242,22 +242,23 @@ public class Page2CaramelWriter extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				ta_content.setText("");
 				create();
+
 				count_text();
 			}
 		});
 		panel_2.setLayout(new GridLayout(0, 1, 0, 0));
-				
-				JPanel panel_7 = new JPanel();
-				panel_2.add(panel_7);
-				
-						JLabel lblNewLabel_2 = new JLabel("글자 수 : ");
-						panel_7.add(lblNewLabel_2);
-						
-								textField = new JTextField();
-								panel_7.add(textField);
-								textField.setText("0");
-								textField.setEditable(false);
-								textField.setColumns(10);
+
+		JPanel panel_7 = new JPanel();
+		panel_2.add(panel_7);
+
+		JLabel lblNewLabel_2 = new JLabel("글자 수 : ");
+		panel_7.add(lblNewLabel_2);
+
+		textField = new JTextField();
+		panel_7.add(textField);
+		textField.setText("0");
+		textField.setEditable(false);
+		textField.setColumns(10);
 
 		JPanel panel_5 = new JPanel();
 		panel_2.add(panel_5);
@@ -265,7 +266,7 @@ public class Page2CaramelWriter extends JFrame {
 
 		JButton btnClear = new JButton("clear");
 		btnClear.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -335,50 +336,59 @@ public class Page2CaramelWriter extends JFrame {
 
 	}
 
+	private String special_characters[] = { "[.]", "<span>", "<br >", "</p>", "<p>", "\r\n", "[?]", //
+			"!", "\r", "\n", "%", "'", ",", "|", "ㅂ", "ㅈ", "ㄷ", "ㄱ", "ㅅ", "ㅛ", "ㅕ", "ㅑ", "ㅐ", //
+			"ㅔ", "ㅁ", "ㄴ", "ㅇ", "ㄹ", "ㅎ", "ㅗ", "ㅓ", "ㅏ", "ㅣ", "ㅋ", "ㅌ", "ㅊ", "ㅍ", "ㅠ", "ㅜ", "ㅡ",//
+			"ㅃ","ㅉ","ㄸ","ㄲ","ㅆ","ㅒ","ㅖ","[+]","[-]","[_]","[/]"//
+	};
+
 	private void count_text() {
-		String content = ta_content.getText().toString();
+		try {
+			new Thread(new Runnable() {
 
-		content = content.replaceAll("\\p{Z}", "");
-		
-		content = content.replaceAll("(^\\p{Z}+|\\p{Z}+$)", "");
-		content = content.replaceAll("%", "");
-		content = content.replaceAll("'", ""); // &#39;
-		content = content.replaceAll("\"", ""); // &quot;
-		content = content.replaceAll(",", ""); // &#44;
-		content = content.replaceAll("|", "");
-		content = content.replaceAll("\n", "");
-		content = content.replaceAll("\r", "");
-		content = content.replaceAll("\r\n", "");
-		
-		content = content.replaceAll("<p>", "");
-		content = content.replaceAll("</p>", "");
-		content = content.replaceAll("<br >", "");
-		content = content.replaceAll("<span>", "");
-		
-		content = content.trim();
-		int cnt = 0;
-		BreakIterator it = BreakIterator.getCharacterInstance();
-		it.setText(content);
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub
+					String content = ta_content.getText().toString();
 
-		while (it.next() != BreakIterator.DONE) {
-			cnt++;
+					content = content.replaceAll("\\p{Z}", "");
+
+					content = content.replaceAll("(^\\p{Z}+|\\p{Z}+$)", "");
+					for (String str : special_characters) {
+						content = content.replaceAll(str, "");
+					}
+
+					content = content.trim();
+					int cnt = 0;
+					BreakIterator it = BreakIterator.getCharacterInstance();
+					it.setText(content);
+
+					while (it.next() != BreakIterator.DONE) {
+						cnt++;
+					}
+
+					textField.setText("" + cnt);
+				}
+			}).start();
+
+		} catch (Exception e) {
+			System.out.println(e);
 		}
 
-		textField.setText("" + cnt);
 	}
-	
-	private void clear(){
-		  tv_businessName.setText("");
-		  tv_keyword.setText("");
-		  tv_detail_keyword.setText("");
-		  ta_content.setText("");
-		  group.clearSelection();
-		  
-		  tv_phone_num.setText("");
-		  tv_address.setText("");
 
-		  chckbxExist.setSelected(false);
-		  textField.setText("0");
+	private void clear() {
+		tv_businessName.setText("");
+		tv_keyword.setText("");
+		tv_detail_keyword.setText("");
+		ta_content.setText("");
+		group.clearSelection();
+
+		tv_phone_num.setText("");
+		tv_address.setText("");
+
+		chckbxExist.setSelected(false);
+		textField.setText("0");
 	}
 
 	private void create() {
