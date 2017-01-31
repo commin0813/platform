@@ -16,6 +16,10 @@ public class Util2Hospital {
 			result.append(subject);
 		}
 		
+		if(!model.getLink().equals("")){
+			result.append(create_link(model.getLink()));
+		}
+		
 		if(!model.getPhone_num().equals("")){
 			result.append(create_phone(model.getPhone_num()));
 		}
@@ -28,6 +32,17 @@ public class Util2Hospital {
 		
 		model.setResult(result.toString());
 		return model;
+	}
+	
+	private static String create_link(String link){
+		if(!link.startsWith("http")){
+			StringBuffer htt = new StringBuffer("http://");
+			htt.append(link);
+			link = htt.toString();
+		}
+		return "<p align=\"left\" style=\"text-align: left;\"><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">"
+				+ "<a href=\""+link+"\" target=\"_self\">홈페이지 바로가기</a>"
+				+ "</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
 	}
 	
 	private static String create_phone(String phone_num){

@@ -45,7 +45,7 @@ public class Page2CaramelWriter extends JFrame {
 	private JPanel contentPane;
 	private JTextField tv_businessName;
 	private JTextField tv_keyword;
-	private JTextField tv_detail_keyword;
+	private JTextField tv_link;
 	private JTextArea ta_content;
 	private ButtonGroup group;
 	private Panel2CaramelWriter panel_writer;
@@ -112,9 +112,9 @@ public class Page2CaramelWriter extends JFrame {
 		panel_input.add(panel, BorderLayout.CENTER);
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[] { 195, 0 };
-		gbl_panel.rowHeights = new int[] { 353, 0, 0 };
+		gbl_panel.rowHeights = new int[] { 353, 0, 0, 0 };
 		gbl_panel.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
-		gbl_panel.rowWeights = new double[] { 1.0, 1.0, Double.MIN_VALUE };
+		gbl_panel.rowWeights = new double[] { 1.0, 1.0, 0.0, Double.MIN_VALUE };
 		panel.setLayout(gbl_panel);
 
 		JPanel panel_3 = new JPanel();
@@ -129,7 +129,7 @@ public class Page2CaramelWriter extends JFrame {
 		gbl_panel_3.columnWidths = new int[] { 0, 0 };
 		gbl_panel_3.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 		gbl_panel_3.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
-		gbl_panel_3.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, Double.MIN_VALUE };
+		gbl_panel_3.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Double.MIN_VALUE };
 		panel_3.setLayout(gbl_panel_3);
 
 		JLabel lblNewLabel_1 = new JLabel("상호명");
@@ -165,8 +165,9 @@ public class Page2CaramelWriter extends JFrame {
 		gbc_tv_keyword.gridx = 0;
 		gbc_tv_keyword.gridy = 3;
 		panel_3.add(tv_keyword, gbc_tv_keyword);
+		
 
-		JLabel label = new JLabel("세부키워드");
+		JLabel label = new JLabel("링크");
 		GridBagConstraints gbc_label = new GridBagConstraints();
 		gbc_label.anchor = GridBagConstraints.WEST;
 		gbc_label.insets = new Insets(0, 0, 5, 0);
@@ -174,16 +175,14 @@ public class Page2CaramelWriter extends JFrame {
 		gbc_label.gridy = 4;
 		panel_3.add(label, gbc_label);
 
-		tv_detail_keyword = new JTextField();
-		tv_detail_keyword.setEnabled(false);
-		tv_detail_keyword.setEditable(false);
-		tv_detail_keyword.setColumns(10);
-		GridBagConstraints gbc_tv_detail_keyword = new GridBagConstraints();
-		gbc_tv_detail_keyword.insets = new Insets(0, 0, 5, 0);
-		gbc_tv_detail_keyword.fill = GridBagConstraints.HORIZONTAL;
-		gbc_tv_detail_keyword.gridx = 0;
-		gbc_tv_detail_keyword.gridy = 5;
-		panel_3.add(tv_detail_keyword, gbc_tv_detail_keyword);
+		tv_link = new JTextField();
+		tv_link.setColumns(10);
+		GridBagConstraints gbc_tv_link = new GridBagConstraints();
+		gbc_tv_link.insets = new Insets(0, 0, 5, 0);
+		gbc_tv_link.fill = GridBagConstraints.HORIZONTAL;
+		gbc_tv_link.gridx = 0;
+		gbc_tv_link.gridy = 5;
+		panel_3.add(tv_link, gbc_tv_link);
 
 		JLabel label_1 = new JLabel("전화번호");
 		GridBagConstraints gbc_label_1 = new GridBagConstraints();
@@ -338,9 +337,10 @@ public class Page2CaramelWriter extends JFrame {
 
 	private String special_characters[] = { "[.]", "<span>", "<br >", "</p>", "<p>", "\r\n", "[?]", //
 			"!", "\r", "\n", "%", "'", ",", "|", "ㅂ", "ㅈ", "ㄷ", "ㄱ", "ㅅ", "ㅛ", "ㅕ", "ㅑ", "ㅐ", //
-			"ㅔ", "ㅁ", "ㄴ", "ㅇ", "ㄹ", "ㅎ", "ㅗ", "ㅓ", "ㅏ", "ㅣ", "ㅋ", "ㅌ", "ㅊ", "ㅍ", "ㅠ", "ㅜ", "ㅡ",//
-			"ㅃ","ㅉ","ㄸ","ㄲ","ㅆ","ㅒ","ㅖ","[+]","[-]","[_]","[/]"//
+			"ㅔ", "ㅁ", "ㄴ", "ㅇ", "ㄹ", "ㅎ", "ㅗ", "ㅓ", "ㅏ", "ㅣ", "ㅋ", "ㅌ", "ㅊ", "ㅍ", "ㅠ", "ㅜ", "ㅡ", //
+			"ㅃ", "ㅉ", "ㄸ", "ㄲ", "ㅆ", "ㅒ", "ㅖ", "[+]", "[-]", "[_]", "[/]"//
 	};
+	private JTextField textField_1;
 
 	private void count_text() {
 		try {
@@ -380,7 +380,7 @@ public class Page2CaramelWriter extends JFrame {
 	private void clear() {
 		tv_businessName.setText("");
 		tv_keyword.setText("");
-		tv_detail_keyword.setText("");
+		tv_link.setText("");
 		ta_content.setText("");
 		group.clearSelection();
 
@@ -406,7 +406,7 @@ public class Page2CaramelWriter extends JFrame {
 
 		model.setAddress(tv_address.getText().toString());
 		model.setBusinessName(tv_businessName.getText().toString());
-		model.setDetail_keyword(tv_detail_keyword.getText().toString());
+		model.setLink(tv_link.getText().toString());
 		model.setIsph(chckbxExist.isSelected());
 		model.setKeyword(tv_keyword.getText().toString());
 		model.setPhone_num(tv_phone_num.getText().toString());

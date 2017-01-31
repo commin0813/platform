@@ -1,6 +1,14 @@
 package model;
 
 public class Model2Caramel {
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+	}
+
 	public String getClassification() {
 		return classification;
 	}
@@ -13,8 +21,8 @@ public class Model2Caramel {
 
 	private String businessName;
 	private String keyword;
-	private String detail_keyword;
-
+	
+	private String link;
 	private String phone_num;
 	private String address;
 	private boolean isph;
@@ -68,12 +76,6 @@ public class Model2Caramel {
 		this.keyword = keyword;
 	}
 
-	public String getDetail_keyword() {
-		return detail_keyword;
-	}
 
-	public void setDetail_keyword(String detail_keyword) {
-		this.detail_keyword = detail_keyword;
-	}
 
 }
