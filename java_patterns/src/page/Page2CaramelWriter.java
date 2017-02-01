@@ -1,7 +1,6 @@
 package page;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -34,11 +33,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
 import model.Model2Caramel;
 import panel.Panel2CaramelWriter;
+import javax.swing.JSeparator;
 
 public class Page2CaramelWriter extends JFrame {
 
@@ -51,9 +50,9 @@ public class Page2CaramelWriter extends JFrame {
 	private Panel2CaramelWriter panel_writer;
 	private JTextField tv_phone_num;
 	private JTextField tv_address;
-
-	private JCheckBox chckbxExist;
 	private JTextField textField;
+	private JCheckBox chckbxExist;
+	private Page2CaramelTag page2CaramelTag;
 
 	/**
 	 * Launch the application.
@@ -112,13 +111,14 @@ public class Page2CaramelWriter extends JFrame {
 		panel_input.add(panel, BorderLayout.CENTER);
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[] { 195, 0 };
-		gbl_panel.rowHeights = new int[] { 353, 0, 0, 0 };
+		gbl_panel.rowHeights = new int[] { 353, 0, 0, 0, 0 };
 		gbl_panel.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
-		gbl_panel.rowWeights = new double[] { 1.0, 1.0, 0.0, Double.MIN_VALUE };
+		gbl_panel.rowWeights = new double[] { 1.0, 1.0, 0.0, 1.0, Double.MIN_VALUE };
 		panel.setLayout(gbl_panel);
 
 		JPanel panel_3 = new JPanel();
 		GridBagConstraints gbc_panel_3 = new GridBagConstraints();
+		gbc_panel_3.gridheight = 3;
 		gbc_panel_3.anchor = GridBagConstraints.NORTH;
 		gbc_panel_3.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_3.fill = GridBagConstraints.HORIZONTAL;
@@ -165,7 +165,6 @@ public class Page2CaramelWriter extends JFrame {
 		gbc_tv_keyword.gridx = 0;
 		gbc_tv_keyword.gridy = 3;
 		panel_3.add(tv_keyword, gbc_tv_keyword);
-		
 
 		JLabel label = new JLabel("링크");
 		GridBagConstraints gbc_label = new GridBagConstraints();
@@ -221,11 +220,10 @@ public class Page2CaramelWriter extends JFrame {
 		JPanel panel_4 = new JPanel();
 		GridBagConstraints gbc_panel_4 = new GridBagConstraints();
 		gbc_panel_4.anchor = GridBagConstraints.WEST;
-		gbc_panel_4.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_4.fill = GridBagConstraints.VERTICAL;
 		gbc_panel_4.gridx = 0;
-		gbc_panel_4.gridy = 10;
-		panel_3.add(panel_4, gbc_panel_4);
+		gbc_panel_4.gridy = 3;
+		panel.add(panel_4, gbc_panel_4);
 
 		JLabel label_3 = new JLabel("대가성문구");
 		panel_4.add(label_3);
@@ -324,12 +322,37 @@ public class Page2CaramelWriter extends JFrame {
 		menuBar.setFont(new Font("맑은 고딕", Font.BOLD, 15));
 		contentPane.add(menuBar, BorderLayout.NORTH);
 
-		JMenu mnInfo = new JMenu("Info");
+		JMenu mnInfo = new JMenu("OPEN");
 		mnInfo.setFont(new Font("맑은 고딕", Font.BOLD, 15));
 		menuBar.add(mnInfo);
 
-		JMenuItem mntmHelp = new JMenuItem("Help");
-		mnInfo.add(mntmHelp);
+		JMenuItem mntmTagcreate = new JMenuItem("태그만들기");
+		mntmTagcreate.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if (page2CaramelTag.isShowing()) {
+					page2CaramelTag.dispose();
+					page2CaramelTag = new Page2CaramelTag();
+				}
+				page2CaramelTag.show();
+			}
+		});
+
+		page2CaramelTag = new Page2CaramelTag();
+
+		mnInfo.add(mntmTagcreate);
+
+		JSeparator separator = new JSeparator();
+		mnInfo.add(separator);
+
+		JMenu mnInfo_1 = new JMenu("INFO");
+		mnInfo_1.setFont(new Font("맑은 고딕", Font.BOLD, 15));
+		menuBar.add(mnInfo_1);
+
+		JMenuItem menuItem_1 = new JMenuItem("Help");
+		mnInfo_1.add(menuItem_1);
 
 		panel_writer = Panel2CaramelWriter.getInstance();
 
@@ -338,7 +361,7 @@ public class Page2CaramelWriter extends JFrame {
 	private String special_characters[] = { "[.]", "<span>", "<br >", "</p>", "<p>", "\r\n", "[?]", //
 			"!", "\r", "\n", "%", "'", ",", "|", "ㅂ", "ㅈ", "ㄷ", "ㄱ", "ㅅ", "ㅛ", "ㅕ", "ㅑ", "ㅐ", //
 			"ㅔ", "ㅁ", "ㄴ", "ㅇ", "ㄹ", "ㅎ", "ㅗ", "ㅓ", "ㅏ", "ㅣ", "ㅋ", "ㅌ", "ㅊ", "ㅍ", "ㅠ", "ㅜ", "ㅡ", //
-			"ㅃ", "ㅉ", "ㄸ", "ㄲ", "ㅆ", "ㅒ", "ㅖ", "[+]", "[-]", "[_]", "[/]"//
+			"ㅃ", "ㅉ", "ㄸ", "ㄲ", "ㅆ", "ㅒ", "ㅖ", "[+]", "[-]", "[_]", "[/]", "[^]"//
 	};
 	private JTextField textField_1;
 
