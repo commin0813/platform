@@ -1,11 +1,8 @@
 package page;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
@@ -15,17 +12,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.StringTokenizer;
-import java.awt.Color;
-import javax.swing.JTextArea;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.CardLayout;
-import javax.swing.border.TitledBorder;
-
-import panel.Panel2CaramelWriter;
 
 import javax.swing.JButton;
-import javax.swing.JScrollBar;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
 
 public class Page2CaramelTag extends JFrame {
 	private JPanel contentPane;
@@ -127,9 +120,14 @@ public class Page2CaramelTag extends JFrame {
 	
 	private void createTag(){
 		String tag_text = ta_tag_before.getText().toString();
-		
 		StringTokenizer st = new StringTokenizer(tag_text, ",");
+		if(tag_text.contains(",")){
+			 st = new StringTokenizer(tag_text, ",");
+		}else if(tag_text.contains("/")){
+			 st = new StringTokenizer(tag_text, "/");
+		}
 		
+	
 		StringBuffer sb = new StringBuffer();
 		
 		while(st.hasMoreTokens()){
