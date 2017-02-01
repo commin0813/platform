@@ -52,6 +52,7 @@ public class Page2CaramelWriter extends JFrame {
 	private JTextField tv_address;
 	private JTextField textField;
 	private JCheckBox chckbxExist;
+	private JCheckBox chSpeed;
 	private Page2CaramelTag page2CaramelTag;
 
 	/**
@@ -94,13 +95,13 @@ public class Page2CaramelWriter extends JFrame {
 		panel_input.add(panel_1, BorderLayout.NORTH);
 		panel_1.setLayout(new GridLayout(0, 3, 0, 0));
 
-		JRadioButton radio_restaurant = new JRadioButton("식당");
+		JRadioButton radio_restaurant = new JRadioButton(CaramelWriterProperties.CLASSIFICATION_RESTAURANT);
 		panel_1.add(radio_restaurant);
 
-		JRadioButton radio_normal = new JRadioButton("일반");
+		JRadioButton radio_normal = new JRadioButton(CaramelWriterProperties.CLASSIFICATION_NORMAL);
 		panel_1.add(radio_normal);
 
-		JRadioButton radio_hospital = new JRadioButton("병원");
+		JRadioButton radio_hospital = new JRadioButton(CaramelWriterProperties.CLASSIFICATION_HOSPITAL);
 		panel_1.add(radio_hospital);
 
 		group.add(radio_restaurant);
@@ -220,7 +221,6 @@ public class Page2CaramelWriter extends JFrame {
 		JPanel panel_4 = new JPanel();
 		GridBagConstraints gbc_panel_4 = new GridBagConstraints();
 		gbc_panel_4.anchor = GridBagConstraints.WEST;
-		gbc_panel_4.fill = GridBagConstraints.VERTICAL;
 		gbc_panel_4.gridx = 0;
 		gbc_panel_4.gridy = 3;
 		panel.add(panel_4, gbc_panel_4);
@@ -230,6 +230,12 @@ public class Page2CaramelWriter extends JFrame {
 
 		chckbxExist = new JCheckBox("");
 		panel_4.add(chckbxExist);
+		
+		JLabel label_4 = new JLabel("스피드본문");
+		panel_4.add(label_4);
+		
+		 chSpeed = new JCheckBox("");
+		panel_4.add(chSpeed);
 
 		JPanel panel_2 = new JPanel();
 		panel_input.add(panel_2, BorderLayout.SOUTH);
@@ -361,7 +367,7 @@ public class Page2CaramelWriter extends JFrame {
 	private String special_characters[] = { "[.]", "<span>", "<br >", "</p>", "<p>", "\r\n", "[?]", //
 			"!", "\r", "\n", "%", "'", ",", "|", "ㅂ", "ㅈ", "ㄷ", "ㄱ", "ㅅ", "ㅛ", "ㅕ", "ㅑ", "ㅐ", //
 			"ㅔ", "ㅁ", "ㄴ", "ㅇ", "ㄹ", "ㅎ", "ㅗ", "ㅓ", "ㅏ", "ㅣ", "ㅋ", "ㅌ", "ㅊ", "ㅍ", "ㅠ", "ㅜ", "ㅡ", //
-			"ㅃ", "ㅉ", "ㄸ", "ㄲ", "ㅆ", "ㅒ", "ㅖ", "[+]", "[-]", "[_]", "[/]", "[^]"//
+			"ㅃ", "ㅉ", "ㄸ", "ㄲ", "ㅆ", "ㅒ", "ㅖ", "[+]", "[-]", "[_]", "[/]"//
 	};
 	private JTextField textField_1;
 
@@ -411,6 +417,7 @@ public class Page2CaramelWriter extends JFrame {
 		tv_address.setText("");
 
 		chckbxExist.setSelected(false);
+		chSpeed.setSelected(false);
 		textField.setText("0");
 	}
 
@@ -431,6 +438,7 @@ public class Page2CaramelWriter extends JFrame {
 		model.setBusinessName(tv_businessName.getText().toString());
 		model.setLink(tv_link.getText().toString());
 		model.setIsph(chckbxExist.isSelected());
+		model.setSpeed(chSpeed.isSelected());
 		model.setKeyword(tv_keyword.getText().toString());
 		model.setPhone_num(tv_phone_num.getText().toString());
 

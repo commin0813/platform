@@ -1,6 +1,15 @@
 package model;
 
 public class Model2Caramel {
+	private String classification;
+	private String businessName;
+	private String keyword;
+	private String link;
+	private String phone_num;
+	private String address;
+	private boolean isph;
+	private boolean isSpeed;
+	
 	public String getLink() {
 		return link;
 	}
@@ -16,16 +25,15 @@ public class Model2Caramel {
 	public void setClassification(String classification) {
 		this.classification = classification;
 	}
-
-	private String classification;
-
-	private String businessName;
-	private String keyword;
 	
-	private String link;
-	private String phone_num;
-	private String address;
-	private boolean isph;
+	public boolean isSpeed() {
+		return isSpeed;
+	}
+
+	public void setSpeed(boolean isSpeed) {
+		this.isSpeed = isSpeed;
+	}
+
 	private String result;
 
 	public String getPhone_num() {
