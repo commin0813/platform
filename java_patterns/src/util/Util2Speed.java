@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.util.Random;
 
 import model.Model2Caramel;
 import page.CaramelWriterProperties;
@@ -55,16 +56,20 @@ public class Util2Speed {
 	}
 
 	private static String create_speed(Model2Caramel model) {
-
-		File file = new File(Util2Speed.class.getResource("").getPath() + "speed//hospital_1.txt");
+		Random random = new Random();
+		String hospital [] = {
+				"hospital_1.txt",
+		};
+		
+		File file = new File(Util2Speed.class.getResource("").getPath() + "speed//"+hospital[random.nextInt(hospital.length)]);
 		String content = "";
 
 		String line = "";
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "EUC-KR"));
 			while ((line = br.readLine()) != null) {
-				line.replaceAll("@@", model.getKeyword());
-				line.replaceAll("bb", model.getBusinessName());
+				line = line.replaceAll("@@", model.getKeyword());
+				line = line.replaceAll("bb", model.getBusinessName());
 				content += line + "\n";
 
 			}
@@ -72,10 +77,8 @@ public class Util2Speed {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		String str = "aabbbbbcccc";
-		str.replace("a", "H");
-		System.out.println(str);
-
+		
+		
 		return content;
 	}
 
