@@ -193,22 +193,24 @@ public class Util2Hospital {
 				CaramelWriterProperties.TAG_P_START+"최고의 실력을 가진 "+keyword +" "+ businessName + ", 어디에있는지 아시나요?"+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START+"이곳은 정말 강추해요^^ "+keyword +" "+ businessName + ", 어디에 있는지 확인해 보세요 !"+CaramelWriterProperties.TAG_P_END,
 		};
-		if(model.isSpeed()){
-			subject.add(subject_reason[random.nextInt(subject_reason.length)] +"<br />\n\n\n");
-			subject.add(contents.get(0));
-			subject.add(subject_characteristic[random.nextInt(subject_characteristic.length)] +"<br />\n\n\n");
-			subject.add(contents.get(1));
-			subject.add(subject_advantages[random.nextInt(subject_advantages.length)] +"<br />\n\n\n");
-			subject.add(contents.get(2));
-			subject.add(subject_place[random.nextInt(subject_place.length)] +"<br />\n\n\n");
-			subject.add(contents.get(3));
-		}else{
-			subject.add(subject_reason[random.nextInt(subject_reason.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
-			subject.add(subject_characteristic[random.nextInt(subject_characteristic.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
-			subject.add(subject_advantages[random.nextInt(subject_advantages.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
-			subject.add(subject_place[random.nextInt(subject_place.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
-		}
 		
+		
+//		if(model.isSpeed()){
+//			subject.add(subject_reason[random.nextInt(subject_reason.length)] +"<br />\n\n\n");
+//			subject.add(contents.get(0));
+//			subject.add(subject_characteristic[random.nextInt(subject_characteristic.length)] +"<br />\n\n\n");
+//			subject.add(contents.get(1));
+//			subject.add(subject_advantages[random.nextInt(subject_advantages.length)] +"<br />\n\n\n");
+//			subject.add(contents.get(2));
+//			subject.add(subject_place[random.nextInt(subject_place.length)] +"<br />\n\n\n");
+//			subject.add(contents.get(3));
+//		}else{
+//			
+//		}
+		subject.add(subject_reason[random.nextInt(subject_reason.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
+		subject.add(subject_characteristic[random.nextInt(subject_characteristic.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
+		subject.add(subject_advantages[random.nextInt(subject_advantages.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
+		subject.add(subject_place[random.nextInt(subject_place.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
 		
 		return subject;
 	}

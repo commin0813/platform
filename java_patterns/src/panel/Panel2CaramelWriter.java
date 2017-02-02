@@ -1,12 +1,6 @@
 package panel;
 
-import java.util.Enumeration;
-
-import javax.swing.AbstractButton;
-import javax.swing.ButtonGroup;
-import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 import model.Model2Caramel;
 import page.CaramelWriterProperties;
@@ -14,6 +8,7 @@ import page.Page2CaramelWriter.WriterIf;
 import util.Util2Hospital;
 import util.Util2Normal;
 import util.Util2Rest;
+import util.Util2Speed;
 
 public class Panel2CaramelWriter implements WriterIf {
 	private static Panel2CaramelWriter instance;
@@ -34,8 +29,9 @@ public class Panel2CaramelWriter implements WriterIf {
 		String classification = model.getClassification();
 
 		////////////// CREATE ///////////////////
-
-		if (classification.equals(CaramelWriterProperties.CLASSIFICATION_NORMAL)) {
+		if(model.isSpeed()){
+			model = Util2Speed.getContent(model);
+		}else if (classification.equals(CaramelWriterProperties.CLASSIFICATION_NORMAL)) {
 			model = Util2Normal.getContent(model);
 		} else if (classification.equals(CaramelWriterProperties.CLASSIFICATION_HOSPITAL)) {
 			model = Util2Hospital.getContent(model);
