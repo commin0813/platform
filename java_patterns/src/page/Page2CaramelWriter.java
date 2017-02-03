@@ -434,13 +434,13 @@ public class Page2CaramelWriter extends JFrame {
 
 		Model2Caramel model = new Model2Caramel();
 
-		model.setAddress(tv_address.getText().toString());
-		model.setBusinessName(tv_businessName.getText().toString());
-		model.setLink(tv_link.getText().toString());
+		model.setAddress(tv_address.getText().toString().trim());
+		model.setBusinessName(tv_businessName.getText().toString().trim());
+		model.setLink(tv_link.getText().toString().trim());
 		model.setIsph(chckbxExist.isSelected());
 		model.setSpeed(chSpeed.isSelected());
-		model.setKeyword(tv_keyword.getText().toString());
-		model.setPhone_num(tv_phone_num.getText().toString());
+		model.setKeyword(tv_keyword.getText().toString().trim());
+		model.setPhone_num(tv_phone_num.getText().toString().trim());
 
 		Enumeration<AbstractButton> enums = group.getElements();
 		String classification = "";

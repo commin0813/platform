@@ -58,10 +58,25 @@ public class Util2Speed {
 	private static String create_speed(Model2Caramel model) {
 		Random random = new Random();
 		String hospital [] = {
-				"hospital_1.txt",
+				"hospital_1.txt","hospital_2.txt",
+		};
+		String normal [] = {
+				"normal_1.txt","normal_2.txt",
+		};
+		String rest [] = {
+				"rest_1.txt","rest_2.txt",
 		};
 		
 		File file = new File(Util2Speed.class.getResource("").getPath() + "speed//"+hospital[random.nextInt(hospital.length)]);
+		
+		if(model.getClassification().equals(CaramelWriterProperties.CLASSIFICATION_HOSPITAL)){
+			file = new File(Util2Speed.class.getResource("").getPath() + "speed//"+hospital[random.nextInt(hospital.length)]);
+		}else if(model.getClassification().equals(CaramelWriterProperties.CLASSIFICATION_NORMAL)){
+			file = new File(Util2Speed.class.getResource("").getPath() + "speed//"+normal[random.nextInt(normal.length)]);
+		}else if(model.getClassification().equals(CaramelWriterProperties.CLASSIFICATION_RESTAURANT)){
+			file = new File(Util2Speed.class.getResource("").getPath() + "speed//"+rest[random.nextInt(rest.length)]);
+		}
+		 
 		String content = "";
 
 		String line = "";
