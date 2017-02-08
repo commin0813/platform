@@ -1,7 +1,7 @@
 package page;
 
 public class CaramelWriterProperties {
-	public static String TAG_P_START= "<p>";
+	public static String TAG_P_START= "<p style=\"font-size:12pt;\">";
 	public static String TAG_P_END= "</p>";
 	
 	public static String MARGIN = "<br /><br /><br />";

@@ -69,6 +69,7 @@ public class Page2CaramelTag extends JFrame {
 			public void keyTyped(KeyEvent e) {
 				// TODO Auto-generated method stub
 				if(ta_tag_before.getText().toString().equals("")){
+					ta_tag_after.setText("");
 					return;
 				}
 				createTag();
