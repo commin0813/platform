@@ -19,11 +19,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+import javax.swing.UIManager;
 
 public class Page2CaramelTag extends JFrame {
 	private JPanel contentPane;
 	private JTextArea ta_tag_before;
 	private JTextArea ta_tag_after;
+	private JPanel panel_2;
+	private JButton btnClear;
 
 	/**
 	 * Launch the application.
@@ -55,7 +58,7 @@ public class Page2CaramelTag extends JFrame {
 		contentPane.setLayout(new GridLayout(2, 1, 0, 0));
 		
 		JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "\uBCC0\uACBD\uD560 \uD0DC\uADF8\uB4E4\uC744 \uC785\uB825\uD558\uC138\uC694(ex \uB2E8\uC5B41, \uB2E8\uC5B42  ....)", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\uBCC0\uACBD\uD560 \uD0DC\uADF8\uB4E4\uC744 \uC785\uB825\uD558\uC138\uC694(ex \uB2E8\uC5B41, \uB2E8\uC5B42 or \uB2E8\uC5B41 / \uB2E8\uC5B42)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel.setBackground(Color.WHITE);
 		contentPane.add(panel);
 		panel.setLayout(new BorderLayout(0, 0));
@@ -101,7 +104,24 @@ public class Page2CaramelTag extends JFrame {
 		ta_tag_after.setEditable(false);
 		panel_1.add(ta_tag_after, BorderLayout.CENTER);
 		
+		panel_2 = new JPanel();
+		panel_1.add(panel_2, BorderLayout.SOUTH);
+		panel_2.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		btnClear = new JButton("clear");
+		btnClear.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				ta_tag_after.setText("");
+				ta_tag_before.setText("");
+			}
+		});
+		panel_2.add(btnClear);
+		
 		JButton btnNewButton = new JButton("복사");
+		panel_2.add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			
 			@Override
@@ -115,8 +135,6 @@ public class Page2CaramelTag extends JFrame {
 				}
 			}
 		});
-		
-		panel_1.add(btnNewButton, BorderLayout.SOUTH);
 	}
 	
 	private void createTag(){
