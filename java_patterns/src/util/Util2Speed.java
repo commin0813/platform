@@ -54,12 +54,11 @@ public class Util2Speed {
 		return "<p align=\"left\" style=\"text-align: left;\"><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">" + "<a href=\"" + link + "\" target=\"_self\">홈페이지 바로가기</a>" + "</span></p>" + CaramelWriterProperties.MARGIN + "\n\n\n";
 	}
 
-	private static String create_phone(String phone_num) {
-		return "<p><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">전화번호 : " + phone_num + "</span></p>" + CaramelWriterProperties.MARGIN + "\n\n\n";
+	private static String create_phone(String phone_num){
+		return "<p><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">"+ phone_num +"</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
 	}
-
-	private static String create_address(String address) {
-		return "<p><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">주소 : " + address + "</span></p>" + CaramelWriterProperties.MARGIN + "\n\n\n";
+	private static String create_address(String address){
+		return "<p><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">"+ address +"</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
 	}
 
 	private static String create_phrases() {

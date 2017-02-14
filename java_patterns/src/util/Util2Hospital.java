@@ -57,10 +57,10 @@ public class Util2Hospital {
 	}
 	
 	private static String create_phone(String phone_num){
-		return "<p><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">전화번호 : "+ phone_num +"</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
+		return "<p><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">"+ phone_num +"</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
 	}
 	private static String create_address(String address){
-		return "<p><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">주소 : "+ address +"</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
+		return "<p><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">"+ address +"</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
 	}
 	private static String create_phrases(){
 		return CaramelWriterProperties.PHRASES;
