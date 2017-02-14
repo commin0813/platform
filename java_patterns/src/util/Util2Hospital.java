@@ -17,25 +17,25 @@ public class Util2Hospital {
 		}
 		
 		if(!model.getLink().equals("")){
-			result.append(create_link(model.getLink()));
+			result.append(Util2Common.create_link(model.getLink()));
 		}
 		
 		if(!model.getLink2().equals("")){
-			result.append(create_link(model.getLink2()));
+			result.append(Util2Common.create_link(model.getLink2()));
 		}
 		
 		if(!model.getPhone_num().equals("")){
-			result.append(create_phone(model.getPhone_num()));
+			result.append(Util2Common.create_phone(model.getPhone_num()));
 		}
 		if(!model.getPhone_num2().equals("")){
-			result.append(create_phone(model.getPhone_num2()));
+			result.append(Util2Common.create_phone(model.getPhone_num2()));
 		}
 		
 		if(!model.getAddress().equals("")){
-			result.append(create_address(model.getAddress()));
+			result.append(Util2Common.create_address(model.getAddress()));
 		}
 		if(!model.getAddress2().equals("")){
-			result.append(create_address(model.getAddress2()));
+			result.append(Util2Common.create_address(model.getAddress2()));
 		}
 		if(model.isIsph()){
 			result.append(create_phrases());
@@ -45,23 +45,23 @@ public class Util2Hospital {
 		return model;
 	}
 	
-	private static String create_link(String link){
-		if(!link.startsWith("http")){
-			StringBuffer htt = new StringBuffer("http://");
-			htt.append(link);
-			link = htt.toString();
-		}
-		return "<p align=\"left\" style=\"text-align: left;\"><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">"
-				+ "<a href=\""+link+"\" target=\"_self\">홈페이지 바로가기</a>"
-				+ "</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
-	}
-	
-	private static String create_phone(String phone_num){
-		return "<p><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">"+ phone_num +"</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
-	}
-	private static String create_address(String address){
-		return "<p><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">"+ address +"</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
-	}
+//	private static String create_link(String link){
+//		if(!link.startsWith("http")){
+//			StringBuffer htt = new StringBuffer("http://");
+//			htt.append(link);
+//			link = htt.toString();
+//		}
+//		return "<p align=\"left\" style=\"text-align: left;\"><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">"
+//				+ "<a href=\""+link+"\" target=\"_self\">홈페이지 바로가기</a>"
+//				+ "</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
+//	}
+//	
+//	private static String create_phone(String phone_num){
+//		return "<p><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">"+ phone_num +"</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
+//	}
+//	private static String create_address(String address){
+//		return "<p><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">"+ address +"</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
+//	}
 	private static String create_phrases(){
 		return CaramelWriterProperties.PHRASES;
 	}
