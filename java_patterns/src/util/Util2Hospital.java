@@ -20,11 +20,22 @@ public class Util2Hospital {
 			result.append(create_link(model.getLink()));
 		}
 		
+		if(!model.getLink2().equals("")){
+			result.append(create_link(model.getLink2()));
+		}
+		
 		if(!model.getPhone_num().equals("")){
 			result.append(create_phone(model.getPhone_num()));
 		}
+		if(!model.getPhone_num2().equals("")){
+			result.append(create_phone(model.getPhone_num2()));
+		}
+		
 		if(!model.getAddress().equals("")){
 			result.append(create_address(model.getAddress()));
+		}
+		if(!model.getAddress2().equals("")){
+			result.append(create_address(model.getAddress2()));
 		}
 		if(model.isIsph()){
 			result.append(create_phrases());
@@ -139,8 +150,8 @@ public class Util2Hospital {
 				"전국 최고","제일 잘 나가", "베스트 오브 베스트","굿 굿 !",", 여기 매우 유명","매우 저렴","전국 최저가","전국 최고의 기술","최첨단 장비 도입"
 		};
 		String title [] = {
-				CaramelWriterProperties.TAG_P_START+""+businessName +"에서 하는 "+ keyword + " " +noun[random.nextInt(noun.length)] +CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+""+keyword+" "+ businessName + ""+inn[random.nextInt(inn.length)] +verb[random.nextInt(verb.length)]+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+""+businessName +"에서 하는 "+ keyword + " " +noun[random.nextInt(noun.length)] +CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+""+keyword+" "+ businessName + ""+inn[random.nextInt(inn.length)] +verb[random.nextInt(verb.length)]+CaramelWriterProperties.TAG_P_END,
 		};
 		
 		return title[random.nextInt(title.length)]+CaramelWriterProperties.MARGIN+"\n\n\n";

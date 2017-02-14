@@ -20,11 +20,22 @@ public class Util2Rest {
 			result.append(create_link(model.getLink()));
 		}
 		
+		if(!model.getLink2().equals("")){
+			result.append(create_link(model.getLink2()));
+		}
+		
 		if(!model.getPhone_num().equals("")){
 			result.append(create_phone(model.getPhone_num()));
 		}
+		if(!model.getPhone_num2().equals("")){
+			result.append(create_phone(model.getPhone_num2()));
+		}
+		
 		if(!model.getAddress().equals("")){
 			result.append(create_address(model.getAddress()));
+		}
+		if(!model.getAddress2().equals("")){
+			result.append(create_address(model.getAddress2()));
 		}
 		if(model.isIsph()){
 			result.append(create_phrases());
@@ -61,33 +72,33 @@ public class Util2Rest {
 		String keyword = model.getKeyword();
 		Random random = new Random();
 		String title [] = {
-				CaramelWriterProperties.TAG_P_START+"놀러갔다가 "+keyword +" "+ businessName + ", 방문하다"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"놀러갔다가 "+keyword +" "+ businessName + "에서 밥 한끼!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"놀러갔다가 "+keyword +" "+ businessName + "을 발견하다"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"여행갔다가 "+keyword +" "+ businessName + "과 운명적 만남"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"여행갔다가 "+keyword +" "+ businessName + "에서 냠냠"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"놀러갔다가 "+keyword +" "+ businessName + ", 방문하다"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"놀러갔다가 "+keyword +" "+ businessName + "에서 밥 한끼!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"놀러갔다가 "+keyword +" "+ businessName + "을 발견하다"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"여행갔다가 "+keyword +" "+ businessName + "과 운명적 만남"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"여행갔다가 "+keyword +" "+ businessName + "에서 냠냠"+CaramelWriterProperties.TAG_P_END,
 				
-				CaramelWriterProperties.TAG_P_START+"오랜만에 놀러갔다가 "+keyword +" "+ businessName + "을 발견!!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"우연히 놀러갔다가 "+keyword +" "+ businessName + "에서 식사를합시댜"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"맛집추천! "+keyword +" "+ businessName + ", 여긴 꼭 가야해"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"맛집추천! "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"맛집추천! "+keyword +" "+ businessName + ",어머 여긴 꼭 가야해"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"오랜만에 놀러갔다가 "+keyword +" "+ businessName + "을 발견!!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"우연히 놀러갔다가 "+keyword +" "+ businessName + "에서 식사를합시댜"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"맛집추천! "+keyword +" "+ businessName + ", 여긴 꼭 가야해"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"맛집추천! "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"맛집추천! "+keyword +" "+ businessName + ",어머 여긴 꼭 가야해"+CaramelWriterProperties.TAG_P_END,
 				
-				CaramelWriterProperties.TAG_P_START+"맛집추천! "+keyword +" "+ businessName + " 정말 맛나요"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"맛집추천! "+keyword +" "+ businessName + " 정말 맛나네요^^"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"소문난 맛집! "+keyword +" "+ businessName + "이 대세"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"소문난 맛집! "+keyword +" "+ businessName + "이 인기"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"드디어 가다! "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"맛집추천! "+keyword +" "+ businessName + " 정말 맛나요"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"맛집추천! "+keyword +" "+ businessName + " 정말 맛나네요^^"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"소문난 맛집! "+keyword +" "+ businessName + "이 대세"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"소문난 맛집! "+keyword +" "+ businessName + "이 인기"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"드디어 가다! "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
 				
-				CaramelWriterProperties.TAG_P_START+"인생 맛집~ "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"인생 맛집~ "+keyword +" "+ businessName + ", 여긴 꼭 갑시다"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"대박 맛집~ "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"대박 맛집~ "+keyword +" "+ businessName + ", 꼭 가세요!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"[대박 맛집] "+keyword +" "+ businessName + ", 꼭 먹어보세요!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"인생 맛집~ "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"인생 맛집~ "+keyword +" "+ businessName + ", 여긴 꼭 갑시다"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"대박 맛집~ "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"대박 맛집~ "+keyword +" "+ businessName + ", 꼭 가세요!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"[대박 맛집] "+keyword +" "+ businessName + ", 꼭 먹어보세요!"+CaramelWriterProperties.TAG_P_END,
 				
-				CaramelWriterProperties.TAG_P_START+keyword+"를 찾으신다면" +" "+ businessName + ", 강추드려요"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+keyword+"를 찾는다면" +" "+ businessName + ", 여기 뿐"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+keyword+"를 찾는다면" +" "+ businessName + "가 좋아요^^"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+keyword+"를 찾으신다면" +" "+ businessName + ", 강추드려요"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+keyword+"를 찾는다면" +" "+ businessName + ", 여기 뿐"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+keyword+"를 찾는다면" +" "+ businessName + "가 좋아요^^"+CaramelWriterProperties.TAG_P_END,
 				
 		};
 		

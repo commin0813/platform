@@ -7,6 +7,7 @@ import model.Model2Caramel;
 import page.CaramelWriterProperties;
 
 public class Util2Normal {
+	
 	public static Model2Caramel getContent(Model2Caramel model){
 		StringBuffer result = new StringBuffer();
 		
@@ -20,11 +21,22 @@ public class Util2Normal {
 			result.append(create_link(model.getLink()));
 		}
 		
+		if(!model.getLink2().equals("")){
+			result.append(create_link(model.getLink2()));
+		}
+		
 		if(!model.getPhone_num().equals("")){
 			result.append(create_phone(model.getPhone_num()));
 		}
+		if(!model.getPhone_num2().equals("")){
+			result.append(create_phone(model.getPhone_num2()));
+		}
+		
 		if(!model.getAddress().equals("")){
 			result.append(create_address(model.getAddress()));
+		}
+		if(!model.getAddress2().equals("")){
+			result.append(create_address(model.getAddress2()));
 		}
 		if(model.isIsph()){
 			result.append(create_phrases());
@@ -60,21 +72,21 @@ public class Util2Normal {
 		String keyword = model.getKeyword();
 		Random random = new Random();
 		String title [] = {
-				CaramelWriterProperties.TAG_P_START+""+keyword +", 저렴한 "+ businessName + "에서 하세요"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+""+keyword +",  "+ businessName + "가 저렴해요"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+""+keyword +",  "+ businessName + "가 최저가격"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+""+keyword +",  "+ businessName + "가 쌉니다"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+""+keyword +" "+ businessName + "에서 다시 시작 된 장미 빛 인생"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+""+keyword +", 저렴한 "+ businessName + "에서 하세요"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+""+keyword +",  "+ businessName + "가 저렴해요"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+""+keyword +",  "+ businessName + "가 최저가격"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+""+keyword +",  "+ businessName + "가 쌉니다"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+""+keyword +" "+ businessName + "에서 다시 시작 된 장미 빛 인생"+CaramelWriterProperties.TAG_P_END,
 				
-				CaramelWriterProperties.TAG_P_START+""+keyword +"! "+ businessName + "에서 자신감 되찾기!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+""+keyword +"! "+ businessName + "에서 자신감 되찾자!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+""+keyword +"! "+ businessName + "에서 완벽하게 고치자!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+""+keyword +"! "+ businessName + "에서 고치자!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+""+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+""+keyword +"! "+ businessName + "에서 자신감 되찾기!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+""+keyword +"! "+ businessName + "에서 자신감 되찾자!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+""+keyword +"! "+ businessName + "에서 완벽하게 고치자!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+""+keyword +"! "+ businessName + "에서 고치자!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+""+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
 				
-				CaramelWriterProperties.TAG_P_START+""+businessName +"에서 하는 "+ keyword + "이 최고"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+""+businessName +"에서 하는 "+ keyword + "이 저렴해요!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+""+businessName +"에서 하는 "+ keyword + ", 실력최고 가격최저"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+""+businessName +"에서 하는 "+ keyword + "이 최고"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+""+businessName +"에서 하는 "+ keyword + "이 저렴해요!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+""+businessName +"에서 하는 "+ keyword + ", 실력최고 가격최저"+CaramelWriterProperties.TAG_P_END,
 				
 				
 		};

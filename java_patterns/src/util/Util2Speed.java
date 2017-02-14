@@ -16,17 +16,28 @@ public class Util2Speed {
 
 		result.append(create_speed(model));
 
-		if (!model.getLink().equals("")) {
+		if(!model.getLink().equals("")){
 			result.append(create_link(model.getLink()));
 		}
-
-		if (!model.getPhone_num().equals("")) {
+		
+		if(!model.getLink2().equals("")){
+			result.append(create_link(model.getLink2()));
+		}
+		
+		if(!model.getPhone_num().equals("")){
 			result.append(create_phone(model.getPhone_num()));
 		}
-		if (!model.getAddress().equals("")) {
+		if(!model.getPhone_num2().equals("")){
+			result.append(create_phone(model.getPhone_num2()));
+		}
+		
+		if(!model.getAddress().equals("")){
 			result.append(create_address(model.getAddress()));
 		}
-		if (model.isIsph()) {
+		if(!model.getAddress2().equals("")){
+			result.append(create_address(model.getAddress2()));
+		}
+		if(model.isIsph()){
 			result.append(create_phrases());
 		}
 

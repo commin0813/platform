@@ -19,6 +19,7 @@ import java.util.Enumeration;
 
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -30,6 +31,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -37,7 +39,6 @@ import javax.swing.border.TitledBorder;
 
 import model.Model2Caramel;
 import panel.Panel2CaramelWriter;
-import javax.swing.JSeparator;
 
 public class Page2CaramelWriter extends JFrame {
 
@@ -75,9 +76,14 @@ public class Page2CaramelWriter extends JFrame {
 	 * Create the frame.
 	 */
 	public Page2CaramelWriter() {
+
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		ImageIcon img = new ImageIcon("camel_icon.png");
+		this.setIconImage(img.getImage());
+
 		setTitle("Caramel Writer");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1000, 700);
+		setBounds(100, 100, 1000, 680);
 
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -101,25 +107,37 @@ public class Page2CaramelWriter extends JFrame {
 		JRadioButton radio_normal = new JRadioButton(CaramelWriterProperties.CLASSIFICATION_NORMAL);
 		panel_1.add(radio_normal);
 
-		JRadioButton radio_hospital = new JRadioButton(CaramelWriterProperties.CLASSIFICATION_HOSPITAL);
+		JRadioButton radio_hospital = new JRadioButton("병원(성)");
 		panel_1.add(radio_hospital);
 
 		group.add(radio_restaurant);
 		group.add(radio_normal);
 		group.add(radio_hospital);
 
+		JRadioButton radio_kp = new JRadioButton("카프");
+		panel_1.add(radio_kp);
+
+		JRadioButton radio_study = new JRadioButton("학원");
+		panel_1.add(radio_study);
+
+		JRadioButton radio_hospital2 = new JRadioButton("병원(일)");
+		panel_1.add(radio_hospital2);
+
+		group.add(radio_kp);
+		group.add(radio_study);
+		group.add(radio_hospital2);
+
 		JPanel panel = new JPanel();
 		panel_input.add(panel, BorderLayout.CENTER);
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[] { 195, 0 };
-		gbl_panel.rowHeights = new int[] { 353, 0, 0, 0, 0 };
+		gbl_panel.rowHeights = new int[] { 353, 0, 0, 0, 0, 0 };
 		gbl_panel.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
-		gbl_panel.rowWeights = new double[] { 1.0, 1.0, 0.0, 1.0, Double.MIN_VALUE };
+		gbl_panel.rowWeights = new double[] { 1.0, 1.0, 0.0, 1.0, 1.0, Double.MIN_VALUE };
 		panel.setLayout(gbl_panel);
 
 		JPanel panel_3 = new JPanel();
 		GridBagConstraints gbc_panel_3 = new GridBagConstraints();
-		gbc_panel_3.gridheight = 3;
 		gbc_panel_3.anchor = GridBagConstraints.NORTH;
 		gbc_panel_3.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_3.fill = GridBagConstraints.HORIZONTAL;
@@ -128,113 +146,128 @@ public class Page2CaramelWriter extends JFrame {
 		panel.add(panel_3, gbc_panel_3);
 		GridBagLayout gbl_panel_3 = new GridBagLayout();
 		gbl_panel_3.columnWidths = new int[] { 0, 0 };
-		gbl_panel_3.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+		gbl_panel_3.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 		gbl_panel_3.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
-		gbl_panel_3.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, Double.MIN_VALUE };
+		gbl_panel_3.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE };
 		panel_3.setLayout(gbl_panel_3);
 
-		JLabel lblNewLabel_1 = new JLabel("상호명");
-		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
-		gbc_lblNewLabel_1.anchor = GridBagConstraints.WEST;
-		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 0);
-		gbc_lblNewLabel_1.gridx = 0;
-		gbc_lblNewLabel_1.gridy = 0;
-		panel_3.add(lblNewLabel_1, gbc_lblNewLabel_1);
+		JPanel panel_8 = new JPanel();
+		panel_8.setBorder(new TitledBorder(null, "\uC0C1\uD638\uBA85", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		GridBagConstraints gbc_panel_8 = new GridBagConstraints();
+		gbc_panel_8.fill = GridBagConstraints.BOTH;
+		gbc_panel_8.insets = new Insets(0, 0, 5, 0);
+		gbc_panel_8.gridx = 0;
+		gbc_panel_8.gridy = 0;
+		panel_3.add(panel_8, gbc_panel_8);
+		panel_8.setLayout(new GridLayout(1, 0, 0, 0));
 
 		tv_businessName = new JTextField();
+		panel_8.add(tv_businessName);
 		tv_businessName.setColumns(10);
-		GridBagConstraints gbc_tv_businessName = new GridBagConstraints();
-		gbc_tv_businessName.insets = new Insets(0, 0, 5, 0);
-		gbc_tv_businessName.fill = GridBagConstraints.HORIZONTAL;
-		gbc_tv_businessName.gridx = 0;
-		gbc_tv_businessName.gridy = 1;
-		panel_3.add(tv_businessName, gbc_tv_businessName);
 
-		JLabel lblNewLabel = new JLabel("키워드");
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 0);
-		gbc_lblNewLabel.anchor = GridBagConstraints.WEST;
-		gbc_lblNewLabel.gridx = 0;
-		gbc_lblNewLabel.gridy = 2;
-		panel_3.add(lblNewLabel, gbc_lblNewLabel);
+		JPanel panel_9 = new JPanel();
+		panel_9.setBorder(new TitledBorder(null, "\uD0A4\uC6CC\uB4DC", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		GridBagConstraints gbc_panel_9 = new GridBagConstraints();
+		gbc_panel_9.insets = new Insets(0, 0, 5, 0);
+		gbc_panel_9.fill = GridBagConstraints.BOTH;
+		gbc_panel_9.gridx = 0;
+		gbc_panel_9.gridy = 1;
+		panel_3.add(panel_9, gbc_panel_9);
+		panel_9.setLayout(new GridLayout(1, 0, 0, 0));
 
 		tv_keyword = new JTextField();
+		panel_9.add(tv_keyword);
 		tv_keyword.setColumns(10);
-		GridBagConstraints gbc_tv_keyword = new GridBagConstraints();
-		gbc_tv_keyword.insets = new Insets(0, 0, 5, 0);
-		gbc_tv_keyword.fill = GridBagConstraints.HORIZONTAL;
-		gbc_tv_keyword.gridx = 0;
-		gbc_tv_keyword.gridy = 3;
-		panel_3.add(tv_keyword, gbc_tv_keyword);
 
-		JLabel label = new JLabel("링크");
-		GridBagConstraints gbc_label = new GridBagConstraints();
-		gbc_label.anchor = GridBagConstraints.WEST;
-		gbc_label.insets = new Insets(0, 0, 5, 0);
-		gbc_label.gridx = 0;
-		gbc_label.gridy = 4;
-		panel_3.add(label, gbc_label);
+		JPanel panel_12 = new JPanel();
+		panel_12.setBorder(new TitledBorder(null, "\uC138\uBD80\uD0A4\uC6CC\uB4DC", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		GridBagConstraints gbc_panel_12 = new GridBagConstraints();
+		gbc_panel_12.insets = new Insets(0, 0, 5, 0);
+		gbc_panel_12.fill = GridBagConstraints.BOTH;
+		gbc_panel_12.gridx = 0;
+		gbc_panel_12.gridy = 2;
+		panel_3.add(panel_12, gbc_panel_12);
+		panel_12.setLayout(new GridLayout(0, 1, 0, 0));
 
-		tv_link = new JTextField();
-		tv_link.setColumns(10);
-		GridBagConstraints gbc_tv_link = new GridBagConstraints();
-		gbc_tv_link.insets = new Insets(0, 0, 5, 0);
-		gbc_tv_link.fill = GridBagConstraints.HORIZONTAL;
-		gbc_tv_link.gridx = 0;
-		gbc_tv_link.gridy = 5;
-		panel_3.add(tv_link, gbc_tv_link);
+		tv_detail_keyword = new JTextField();
+		tv_detail_keyword.setColumns(10);
+		panel_12.add(tv_detail_keyword);
 
-		JLabel label_1 = new JLabel("전화번호");
-		GridBagConstraints gbc_label_1 = new GridBagConstraints();
-		gbc_label_1.anchor = GridBagConstraints.WEST;
-		gbc_label_1.insets = new Insets(0, 0, 5, 0);
-		gbc_label_1.gridx = 0;
-		gbc_label_1.gridy = 6;
-		panel_3.add(label_1, gbc_label_1);
-
-		tv_phone_num = new JTextField();
-		tv_phone_num.setColumns(10);
-		GridBagConstraints gbc_tv_phone_num = new GridBagConstraints();
-		gbc_tv_phone_num.insets = new Insets(0, 0, 5, 0);
-		gbc_tv_phone_num.fill = GridBagConstraints.HORIZONTAL;
-		gbc_tv_phone_num.gridx = 0;
-		gbc_tv_phone_num.gridy = 7;
-		panel_3.add(tv_phone_num, gbc_tv_phone_num);
-
-		JLabel label_2 = new JLabel("주소");
-		GridBagConstraints gbc_label_2 = new GridBagConstraints();
-		gbc_label_2.anchor = GridBagConstraints.WEST;
-		gbc_label_2.insets = new Insets(0, 0, 5, 0);
-		gbc_label_2.gridx = 0;
-		gbc_label_2.gridy = 8;
-		panel_3.add(label_2, gbc_label_2);
+		JPanel panel_11 = new JPanel();
+		panel_11.setBorder(new TitledBorder(null, "\uC8FC\uC18C", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		GridBagConstraints gbc_panel_11 = new GridBagConstraints();
+		gbc_panel_11.insets = new Insets(0, 0, 5, 0);
+		gbc_panel_11.fill = GridBagConstraints.BOTH;
+		gbc_panel_11.gridx = 0;
+		gbc_panel_11.gridy = 3;
+		panel_3.add(panel_11, gbc_panel_11);
+		panel_11.setLayout(new GridLayout(2, 0, 0, 0));
 
 		tv_address = new JTextField();
+		tv_address.setToolTipText("주소 1");
+		panel_11.add(tv_address);
 		tv_address.setColumns(10);
-		GridBagConstraints gbc_tv_address = new GridBagConstraints();
-		gbc_tv_address.insets = new Insets(0, 0, 5, 0);
-		gbc_tv_address.fill = GridBagConstraints.HORIZONTAL;
-		gbc_tv_address.gridx = 0;
-		gbc_tv_address.gridy = 9;
-		panel_3.add(tv_address, gbc_tv_address);
+
+		tv_address2 = new JTextField();
+		tv_address2.setToolTipText("주소 2");
+		panel_11.add(tv_address2);
+		tv_address2.setColumns(10);
+
+		JPanel panel_10 = new JPanel();
+		panel_10.setBorder(new TitledBorder(null, "\uC804\uD654\uBC88\uD638", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		GridBagConstraints gbc_panel_10 = new GridBagConstraints();
+		gbc_panel_10.insets = new Insets(0, 0, 5, 0);
+		gbc_panel_10.fill = GridBagConstraints.BOTH;
+		gbc_panel_10.gridx = 0;
+		gbc_panel_10.gridy = 4;
+		panel_3.add(panel_10, gbc_panel_10);
+		panel_10.setLayout(new GridLayout(2, 0, 0, 0));
+
+		tv_phone_num = new JTextField();
+		panel_10.add(tv_phone_num);
+		tv_phone_num.setColumns(10);
+
+		tv_phone_num2 = new JTextField();
+		tv_phone_num2.setColumns(10);
+		panel_10.add(tv_phone_num2);
+
+		JPanel panel_6 = new JPanel();
+		panel_6.setBorder(new TitledBorder(null, "\uB9C1\uD06C\uC8FC\uC18C", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		GridBagConstraints gbc_panel_6 = new GridBagConstraints();
+		gbc_panel_6.insets = new Insets(0, 0, 5, 0);
+		gbc_panel_6.anchor = GridBagConstraints.WEST;
+		gbc_panel_6.fill = GridBagConstraints.BOTH;
+		gbc_panel_6.gridx = 0;
+		gbc_panel_6.gridy = 5;
+		panel_3.add(panel_6, gbc_panel_6);
+		panel_6.setLayout(new GridLayout(2, 0, 0, 0));
+
+		tv_link = new JTextField();
+		panel_6.add(tv_link);
+		tv_link.setColumns(10);
+
+		tv_link2 = new JTextField();
+		tv_link2.setColumns(10);
+		panel_6.add(tv_link2);
 
 		JPanel panel_4 = new JPanel();
 		GridBagConstraints gbc_panel_4 = new GridBagConstraints();
-		gbc_panel_4.anchor = GridBagConstraints.WEST;
+		gbc_panel_4.fill = GridBagConstraints.BOTH;
+		gbc_panel_4.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_4.gridx = 0;
-		gbc_panel_4.gridy = 3;
-		panel.add(panel_4, gbc_panel_4);
+		gbc_panel_4.gridy = 6;
+		panel_3.add(panel_4, gbc_panel_4);
 
 		JLabel label_3 = new JLabel("대가성문구");
 		panel_4.add(label_3);
 
 		chckbxExist = new JCheckBox("");
 		panel_4.add(chckbxExist);
-		
+
 		JLabel label_4 = new JLabel("스피드본문");
 		panel_4.add(label_4);
-		
-		 chSpeed = new JCheckBox("");
+
+		chSpeed = new JCheckBox("");
 		panel_4.add(chSpeed);
 
 		JPanel panel_2 = new JPanel();
@@ -367,9 +400,13 @@ public class Page2CaramelWriter extends JFrame {
 	private String special_characters[] = { "[.]", "<span>", "<br >", "</p>", "<p>", "\r\n", "[?]", //
 			"!", "\r", "\n", "%", "'", ",", "|", "ㅂ", "ㅈ", "ㄷ", "ㄱ", "ㅅ", "ㅛ", "ㅕ", "ㅑ", "ㅐ", //
 			"ㅔ", "ㅁ", "ㄴ", "ㅇ", "ㄹ", "ㅎ", "ㅗ", "ㅓ", "ㅏ", "ㅣ", "ㅋ", "ㅌ", "ㅊ", "ㅍ", "ㅠ", "ㅜ", "ㅡ", //
-			"ㅃ", "ㅉ", "ㄸ", "ㄲ", "ㅆ", "ㅒ", "ㅖ", "[+]", "[-]", "[_]", "[/]","\\^","\\[","\\]","\\{","\\}"//
+			"ㅃ", "ㅉ", "ㄸ", "ㄲ", "ㅆ", "ㅒ", "ㅖ", "[+]", "[-]", "[_]", "[/]", "\\^", "\\[", "\\]", "\\{", "\\}"//
 	};
-	private JTextField textField_1;
+
+	private JTextField tv_address2;
+	private JTextField tv_link2;
+	private JTextField tv_detail_keyword;
+	private JTextField tv_phone_num2;
 
 	private void count_text() {
 		try {
@@ -412,6 +449,10 @@ public class Page2CaramelWriter extends JFrame {
 		tv_link.setText("");
 		ta_content.setText("");
 		group.clearSelection();
+		tv_address2.setText("");
+		tv_link2.setText("");
+		tv_detail_keyword.setText("");
+		tv_phone_num2.setText("");
 
 		tv_phone_num.setText("");
 		tv_address.setText("");
@@ -435,12 +476,16 @@ public class Page2CaramelWriter extends JFrame {
 		Model2Caramel model = new Model2Caramel();
 
 		model.setAddress(tv_address.getText().toString().trim());
+		model.setAddress2(tv_address2.getText().toString().trim());
 		model.setBusinessName(tv_businessName.getText().toString().trim());
 		model.setLink(tv_link.getText().toString().trim());
+		model.setLink2(tv_link2.getText().toString().trim());
 		model.setIsph(chckbxExist.isSelected());
 		model.setSpeed(chSpeed.isSelected());
 		model.setKeyword(tv_keyword.getText().toString().trim());
+		model.setDetail_keyword(tv_detail_keyword.getText().toString().trim());
 		model.setPhone_num(tv_phone_num.getText().toString().trim());
+		model.setPhone_num2(tv_phone_num2.getText().toString().trim());
 
 		Enumeration<AbstractButton> enums = group.getElements();
 		String classification = "";
