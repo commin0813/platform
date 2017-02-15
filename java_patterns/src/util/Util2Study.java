@@ -6,7 +6,7 @@ import java.util.Random;
 import model.Model2Caramel;
 import page.CaramelWriterProperties;
 
-public class Util2Normal {
+public class Util2Study {
 	
 	public static Model2Caramel getContent(Model2Caramel model){
 		StringBuffer result = new StringBuffer();
@@ -54,21 +54,25 @@ public class Util2Normal {
 	private static String create_title(Model2Caramel model){
 		String businessName = model.getBusinessName();
 		String keyword = model.getKeyword();
-		
 		Random random = new Random();
-		String titles [] = {
+		String titles[] = {
 				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +", 저렴한 "+ businessName + "에서 하세요"+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +",  "+ businessName + "가 저렴해요"+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +",  "+ businessName + "가 최저가격"+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +",  "+ businessName + "가 쌉니다"+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +" "+ businessName + "에서 다시 시작 된 장미 빛 인생"+CaramelWriterProperties.TAG_P_END,
 				
-				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +"! "+ businessName + "에서 완벽하게 해결~!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +"! "+ businessName + "에서 자신감 되찾기!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +"! "+ businessName + "에서 자신감 되찾자!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +"! "+ businessName + "에서 완벽하게 고치자!"+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +"! "+ businessName + "에서 고치자!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
 				
 				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+businessName +"에서 하는 "+ keyword + "이 최고"+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+businessName +"에서 하는 "+ keyword + "이 저렴해요!"+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+businessName +"에서 하는 "+ keyword + ", 실력최고 가격최저"+CaramelWriterProperties.TAG_P_END,
+				
+				
 		};
 		
 		String detail_keyword = model.getDetail_keyword();
@@ -90,6 +94,13 @@ public class Util2Normal {
 		
 		Random random = new Random();
 		
+		String reason_front[] ={
+				
+		};
+		
+		String reason_back[] ={
+				
+		};
 		
 		String subject_reason [] = {
 				CaramelWriterProperties.TAG_P_START+"왜 "+businessName +"의 "+ keyword + "가 최고라는 소문이 자자 한 걸까요?"+CaramelWriterProperties.TAG_P_END,
@@ -100,7 +111,7 @@ public class Util2Normal {
 				
 				CaramelWriterProperties.TAG_P_START+"실력 좋기로 소문난 "+keyword +" "+ businessName + ", 평소에도 많이 들었었는데요. 지금부터 자세히 알아보도록 하겠습니다."+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START+"다들 아시죠 ? 전국 최고로 소문난 "+keyword +", "+ businessName + "에 대해 포스팅 하도록 할게요"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"소문난 병원! "+keyword +" "+ businessName + ", 이곳이 왜 유명한지 전격 해부했습니다. "+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"소문난 학원! "+keyword +" "+ businessName + ", 이곳이 왜 유명한지 전격 해부했습니다. "+CaramelWriterProperties.TAG_P_END,
 		};
 		
 		
@@ -124,10 +135,36 @@ public class Util2Normal {
 		};
 		
 		
+		String place_front[] = {
+				"잘 가르치기로 소문난 "+keyword +" "+ businessName,
+				"선생님들이 열정가득한걸로 소문난 "+keyword +" "+ businessName,
+				"좋은학원 "+keyword +" "+ businessName,
+				"좋기로 소문난 학원 "+keyword +" "+ businessName,
+				"잘가르치기로 소문난 학원 "+keyword +" "+ businessName,
+				"잘가르치는 선생님이 많은 "+keyword +" "+ businessName,
+				"좋은 선생님들이 많은 "+keyword +" "+ businessName,
+				"동종업계 최고의 학원 "+keyword +" "+ businessName,
+				"꿈을 실현해주는 학원 "+keyword +" "+ businessName,
+				"학생들의 꿈이 실현되는 학원 "+keyword +" "+ businessName,
+				
+				"잘 가르치는 배움터 "+keyword +" "+ businessName,
+				"좋은 선생님들이 많은 배움터 "+keyword +" "+ businessName,
+				"정말 좋은 배움터 "+keyword +" "+ businessName,
+				"학생들의 꿈이 실현되는 배움터 "+keyword +" "+ businessName,
+				"배움의 현장 "+keyword +" "+ businessName,
+				"열정가득한 선생님들이 많은 배움터 "+keyword +" "+ businessName,
+		};
+		String place_back[] ={
+				", 어디에 위치한지 아시나요~?",
+				", 어디에 있는지 아시나요?",
+				", 어디에 위치해 있을까요?",
+				", 어디에 있는지 확인해보세요~",
+				", 어떻게 찾으면될까요?",
+				", 어디에 있는지 위치를 확인해보세요~",
+		};
+		
 		String subject_place [] = {
-				CaramelWriterProperties.TAG_P_START+"좋기로 소문난 "+keyword +" "+ businessName + ", 어디에 위치해 있을까요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"최고의 실력을 가진 "+keyword +" "+ businessName + ", 어디에있는지 아시나요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"이건 정말 강추해요^^ "+keyword +" "+ businessName + ", 어디에 있는지 확인해 보세요 !"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+place_front[random.nextInt(place_front.length)] +place_back[random.nextInt(place_back.length)] +CaramelWriterProperties.TAG_P_END,
 		};
 		
 		subject.add(subject_reason[random.nextInt(subject_reason.length)] +CaramelWriterProperties.MARGIN_2+"\n\n\n");

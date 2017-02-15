@@ -54,30 +54,30 @@ public class Util2Rest {
 		String businessName = model.getBusinessName();
 		String keyword = model.getKeyword();
 		Random random = new Random();
-		String title [] = {
-				CaramelWriterProperties.TAG_P_START_TITLE+"놀러갔다가 "+keyword +" "+ businessName + ", 방문하다"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"놀러갔다가 "+keyword +" "+ businessName + "에서 밥 한끼!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"놀러갔다가 "+keyword +" "+ businessName + "을 발견하다"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"여행갔다가 "+keyword +" "+ businessName + "과 운명적 만남"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"여행갔다가 "+keyword +" "+ businessName + "에서 냠냠"+CaramelWriterProperties.TAG_P_END,
+		String titles [] = {
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"놀러갔다가 "+keyword +" "+ businessName + ", 방문하다"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"놀러갔다가 "+keyword +" "+ businessName + "에서 밥 한끼!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"놀러갔다가 "+keyword +" "+ businessName + "을 발견하다"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"여행갔다가 "+keyword +" "+ businessName + "과 운명적 만남"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"여행갔다가 "+keyword +" "+ businessName + "에서 냠냠"+CaramelWriterProperties.TAG_P_END,
 				
-				CaramelWriterProperties.TAG_P_START_TITLE+"오랜만에 놀러갔다가 "+keyword +" "+ businessName + "을 발견!!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"우연히 놀러갔다가 "+keyword +" "+ businessName + "에서 식사를합시댜"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"맛집추천! "+keyword +" "+ businessName + ", 여긴 꼭 가야해"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"맛집추천! "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"맛집추천! "+keyword +" "+ businessName + ",어머 여긴 꼭 가야해"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"오랜만에 놀러갔다가 "+keyword +" "+ businessName + "을 발견!!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"우연히 놀러갔다가 "+keyword +" "+ businessName + "에서 식사를합시댜"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"맛집추천! "+keyword +" "+ businessName + ", 여긴 꼭 가야해"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"맛집추천! "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"맛집추천! "+keyword +" "+ businessName + ",어머 여긴 꼭 가야해"+CaramelWriterProperties.TAG_P_END,
 				
-				CaramelWriterProperties.TAG_P_START_TITLE+"맛집추천! "+keyword +" "+ businessName + " 정말 맛나요"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"맛집추천! "+keyword +" "+ businessName + " 정말 맛나네요^^"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"소문난 맛집! "+keyword +" "+ businessName + "이 대세"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"소문난 맛집! "+keyword +" "+ businessName + "이 인기"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"드디어 가다! "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"맛집추천! "+keyword +" "+ businessName + " 정말 맛나요"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"맛집추천! "+keyword +" "+ businessName + " 정말 맛나네요^^"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"소문난 맛집! "+keyword +" "+ businessName + "이 대세"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"소문난 맛집! "+keyword +" "+ businessName + "이 인기"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"드디어 가다! "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
 				
-				CaramelWriterProperties.TAG_P_START_TITLE+"인생 맛집~ "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"인생 맛집~ "+keyword +" "+ businessName + ", 여긴 꼭 갑시다"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"대박 맛집~ "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"대박 맛집~ "+keyword +" "+ businessName + ", 꼭 가세요!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"[대박 맛집] "+keyword +" "+ businessName + ", 꼭 먹어보세요!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"인생 맛집~ "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"인생 맛집~ "+keyword +" "+ businessName + ", 여긴 꼭 갑시다"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"대박 맛집~ "+keyword +" "+ businessName + ""+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"대박 맛집~ "+keyword +" "+ businessName + ", 꼭 가세요!"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+"맛이 일품인 맛집~ "+keyword +" "+ businessName + ", 꼭 먹어보세요!"+CaramelWriterProperties.TAG_P_END,
 				
 				CaramelWriterProperties.TAG_P_START_TITLE+keyword+"를 찾으신다면" +" "+ businessName + ", 강추드려요"+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START_TITLE+keyword+"를 찾는다면" +" "+ businessName + ", 여기 뿐"+CaramelWriterProperties.TAG_P_END,
@@ -85,7 +85,16 @@ public class Util2Rest {
 				
 		};
 		
-		return title[random.nextInt(title.length)]+CaramelWriterProperties.MARGIN+"\n\n\n";
+		String detail_keyword = model.getDetail_keyword();
+		String imsi = titles[random.nextInt(titles.length)]+CaramelWriterProperties.MARGIN+"\n\n\n";
+		String title=imsi;
+		if(!detail_keyword.equals("")){
+			title = imsi.replace("@@", "[ "+detail_keyword+" ]");
+		}else{
+			title = imsi.replace("@@", "");
+		}
+		
+		return title;
 	}
 	
 	private static ArrayList<String> create_subject(Model2Caramel model){
@@ -107,13 +116,7 @@ public class Util2Rest {
 				CaramelWriterProperties.TAG_P_START+"다들 아시죠 ? 맛집으로 소문난 "+keyword +" "+ businessName + "에 대해 포스팅 하도록 할게요"+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START+"소문난 맛집! "+keyword +" "+ businessName + ", 이곳이 왜 유명한지 전격 해부했습니다. "+CaramelWriterProperties.TAG_P_END,
 		};
-		String subject_reason_sub [] = {
-				CaramelWriterProperties.TAG_P_START+"왜 "+keyword +" "+ businessName + "가 맛집이라고 소문이 자자 한 걸까요?"+CaramelWriterProperties.TAG_P_END,
 				
-		};
-		
-		
-		
 		String subject_characteristic [] = {
 				CaramelWriterProperties.TAG_P_START+""+keyword +" "+ businessName + "이 특별한 이유는 무엇일까요?"+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START+""+keyword +" "+ businessName + "만의 특별함은 무엇이 있을까요?"+CaramelWriterProperties.TAG_P_END,
@@ -140,10 +143,13 @@ public class Util2Rest {
 				CaramelWriterProperties.TAG_P_START+"이곳은 정말 강추해요^^ "+keyword +" "+ businessName + " 어디 있는지 확인하시고 찾아가보세요!"+CaramelWriterProperties.TAG_P_END,
 		};
 		
-		subject.add(subject_reason[random.nextInt(subject_reason.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
-		subject.add(subject_characteristic[random.nextInt(subject_characteristic.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
-		subject.add(subject_advantages[random.nextInt(subject_advantages.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
-		subject.add(subject_place[random.nextInt(subject_place.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
+		subject.add(subject_reason[random.nextInt(subject_reason.length)] +CaramelWriterProperties.MARGIN_2+"\n\n\n");
+		subject.add(Util2Common.commonTextReason(keyword, businessName)+CaramelWriterProperties.MARGIN+"\n\n\n");
+		subject.add(subject_characteristic[random.nextInt(subject_characteristic.length)] +CaramelWriterProperties.MARGIN_2+"\n\n\n");
+		subject.add(Util2Common.commonTextSpecial(keyword, businessName)+CaramelWriterProperties.MARGIN+"\n\n\n");
+		subject.add(subject_advantages[random.nextInt(subject_advantages.length)] +CaramelWriterProperties.MARGIN_2+"\n\n\n");
+		subject.add(Util2Common.commonTextAdvantage(keyword, businessName)+CaramelWriterProperties.MARGIN+"\n\n\n");
+		subject.add(subject_place[random.nextInt(subject_place.length)] +CaramelWriterProperties.MARGIN_2+"\n\n\n");
 		
 		return subject;
 	}

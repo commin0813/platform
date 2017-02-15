@@ -6,7 +6,7 @@ import java.util.Random;
 import model.Model2Caramel;
 import page.CaramelWriterProperties;
 
-public class Util2Normal {
+public class Util2KP {
 	
 	public static Model2Caramel getContent(Model2Caramel model){
 		StringBuffer result = new StringBuffer();
@@ -54,33 +54,59 @@ public class Util2Normal {
 	private static String create_title(Model2Caramel model){
 		String businessName = model.getBusinessName();
 		String keyword = model.getKeyword();
-		
 		Random random = new Random();
-		String titles [] = {
-				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +", 저렴한 "+ businessName + "에서 하세요"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +",  "+ businessName + "가 저렴해요"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +",  "+ businessName + "가 최저가격"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +",  "+ businessName + "가 쌉니다"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +" "+ businessName + "에서 다시 시작 된 장미 빛 인생"+CaramelWriterProperties.TAG_P_END,
+		String front [] ={
+				keyword+"를 찾으신다구요? ",
+				keyword+"는 업계 최고 ",
+				keyword+"는 동일업종 최고 ",
+				keyword+"는 같은 업종 최고 ",
+				keyword+", 최고의 시스템을 가진 ",
+				keyword+"를 알아보고 계시다면 ",
+				keyword+"를 찾고있으시다면 ",
+				keyword+"를 생각하고 있으시다면 ",
+				keyword+"를 하고싶으시다면 ",
+				keyword+"를 하고싶지는 않으세요? ",
+				keyword+"를 생각하고 있지는 않으세요? ",
+				keyword+"를 해보고싶으시지는 않으세요? ",
+				keyword+"를 고려하고있지는 않으세요? ",
+				keyword+"는 이곳에서 책입집니다. ",
+				keyword+"는 이곳이 좋습니다. ",
+				keyword+"는 여기가 최고예요. ",
+				keyword+"는 이곳이짱이랍니다~ ",
+				keyword+"는 제가 추천합니다~ ",
+				"[ "+keyword+" ]"+"최고의 조건",
+				"[ "+keyword+" ]"+"초기비용 100% 환급,",
+				"[ "+keyword+" ]"+"포스팅량 최고치 갱신,",
+				"[ "+keyword+" ]"+"새로운등급 런칭~!",
 				
-				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +"! "+ businessName + "에서 완벽하게 해결~!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword +"! "+ businessName + "에서 고치자!"+CaramelWriterProperties.TAG_P_END,
-				
-				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+businessName +"에서 하는 "+ keyword + "이 최고"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+businessName +"에서 하는 "+ keyword + "이 저렴해요!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+businessName +"에서 하는 "+ keyword + ", 실력최고 가격최저"+CaramelWriterProperties.TAG_P_END,
 		};
 		
-		String detail_keyword = model.getDetail_keyword();
-		String imsi = titles[random.nextInt(titles.length)]+CaramelWriterProperties.MARGIN+"\n\n\n";
-		String title=imsi;
-		if(!detail_keyword.equals("")){
-			title = imsi.replace("@@", "[ "+detail_keyword+" ]");
-		}else{
-			title = imsi.replace("@@", "");
-		}
+		String back [] ={
+				businessName+"를 한번 알아보세요~",
+				businessName+"를 자세히 알아보세요",
+				businessName+" 업계 최고 조건",
+				businessName+"로 쉽게 시작하세요",
+				businessName+"로 알차게 시작하세요",
+				businessName+"로 쉽고 즐겁게 하세요~",
+				businessName+"를 자세하게 알아보시면 좋아요~",
+				businessName+"가 제일 좋은거 같아요~",
+				businessName+"가 정말 좋아요~!",
+				
+				businessName+"가 믿음직하죠",
+				businessName+"가 신뢰가 가는 곳입니다~",
+				businessName+"가 정말 좋은 곳이랍니다~",
+				businessName+"가 초보자도 할수 있는 곳이죠!",
+		};
 		
-		return title;
+		
+		
+		String title [] = {
+				CaramelWriterProperties.TAG_P_START_TITLE+""+front[random.nextInt(front.length)]+back[random.nextInt(back.length)]+CaramelWriterProperties.TAG_P_END,
+		
+				
+		};
+		
+		return title[random.nextInt(title.length)]+CaramelWriterProperties.MARGIN+"\n\n\n";
 	}
 	
 	private static ArrayList<String> create_subject(Model2Caramel model){
@@ -125,9 +151,9 @@ public class Util2Normal {
 		
 		
 		String subject_place [] = {
-				CaramelWriterProperties.TAG_P_START+"좋기로 소문난 "+keyword +" "+ businessName + ", 어디에 위치해 있을까요?"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"잘하기로 소문난 "+keyword +" "+ businessName + ", 어디에 위치해 있을까요?"+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START+"최고의 실력을 가진 "+keyword +" "+ businessName + ", 어디에있는지 아시나요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"이건 정말 강추해요^^ "+keyword +" "+ businessName + ", 어디에 있는지 확인해 보세요 !"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"이곳은 정말 강추해요^^ "+keyword +" "+ businessName + ", 어디에 있는지 확인해 보세요 !"+CaramelWriterProperties.TAG_P_END,
 		};
 		
 		subject.add(subject_reason[random.nextInt(subject_reason.length)] +CaramelWriterProperties.MARGIN_2+"\n\n\n");

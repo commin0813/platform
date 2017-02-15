@@ -7,6 +7,7 @@ public class CaramelWriterProperties {
 	
 	public static String MARGIN = "<br /><br /><br />";
 	public static String MARGIN_1 = "<br />";
+	public static String MARGIN_2 = "<br /><br />";
 	
 	
 	public static String CLASSIFICATION_HOSPITAL = "병원(성)";

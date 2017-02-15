@@ -45,93 +45,8 @@ public class Util2Hospital {
 		return model;
 	}
 	
-//	private static String create_link(String link){
-//		if(!link.startsWith("http")){
-//			StringBuffer htt = new StringBuffer("http://");
-//			htt.append(link);
-//			link = htt.toString();
-//		}
-//		return "<p align=\"left\" style=\"text-align: left;\"><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">"
-//				+ "<a href=\""+link+"\" target=\"_self\">홈페이지 바로가기</a>"
-//				+ "</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
-//	}
-//	
-//	private static String create_phone(String phone_num){
-//		return "<p><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">"+ phone_num +"</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
-//	}
-//	private static String create_address(String address){
-//		return "<p><span style=\"font-size: 24pt; color: rgb(255, 0, 0);\">"+ address +"</span></p>"+CaramelWriterProperties.MARGIN+"\n\n\n";
-//	}
 	private static String create_phrases(){
 		return CaramelWriterProperties.PHRASES;
-	}
-	
-	private static ArrayList<String> create_content_speed(Model2Caramel model){
-		boolean isSpeed = model.isSpeed();
-		if(!isSpeed)
-			return null;
-		Random random = new Random();
-		ArrayList<String> contents = new ArrayList<String>();
-		String content1 [] = {
-				CaramelWriterProperties.TAG_P_START+"오늘은 여러분들께 정말 중요한 것을 알려 드릴려고 합니다."+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"오늘은 중요한 정보하나를 알려드리고자 이렇게 포스팅합니다."+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"오늘은 정말 좋은 정보 하나 알려드리려고 해요~ 눈크게뜨시고 포스팅을 봐주세요"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"오늘 정말 특급 소식하나를 들어서 포스팅 하게되었어요!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"혹시 요즘 얼굴이나 건강등에 걱정이 있으신가요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"혹시 요즘 건강이나 피부 등에 관시이 있으시진 않으신가요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"요즘 어떤 고민이 있으신가요? 저는 건강이나 피부등에 관심이 많아졌어요."+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"건강은 젊었을때 챙겨야한다는 말 들어보신적 있으신가요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"나이가들어가면서 걱정거리도 같이 늘어가는거 모두 공감하시는 내용일텐데요. 그래서 좋은 정보 하나 가져왔습니다."+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"여러분 , 혹시 "+model.getBusinessName()+"에 대해 들어보신 내용이 있으신가요?"+CaramelWriterProperties.TAG_P_END,
-				
-		};
-		
-		String content2 [] = {
-				CaramelWriterProperties.TAG_P_START+"오늘은 여러분들께 정말 중요한 것을 알려 드릴려고 합니다.2"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"오늘은 중요한 정보하나를 알려드리고자 이렇게 포스팅합니다.2"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"오늘은 정말 좋은 정보 하나 알려드리려고 해요~ 눈크게뜨시고 포스팅을 봐주세요2"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"오늘 정말 특급 소식하나를 들어서 포스팅 하게되었어요!2"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"혹시 요즘 얼굴이나 건강등에 걱정이 있으신가요2"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"혹시 요즘 건강이나 피부 등에 관시이 있으시진 않으신가요?2"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"요즘 어떤 고민이 있으신가요? 저는 건강이나 피부등에 관심이 많아졌어요2."+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"건강은 젊었을때 챙겨야한다는 말 들어보신적 있으신가요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"나이가들어가면서 걱정거리도 같이 늘어가는거 모두 공감하시는 내용일텐데요. 그래서 좋은 정보 하나 가져왔습니다."+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"여러분 , 혹시 "+model.getBusinessName()+"에 대해 들어보신 내용이 있으신가요?"+CaramelWriterProperties.TAG_P_END,
-				
-		};
-		
-		String content3 [] = {
-				CaramelWriterProperties.TAG_P_START+"오늘은 여러분들께 정말 중요한 것을 알려 드릴려고 합니다."+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"오늘은 중요한 정보하나를 알려드리고자 이렇게 포스팅합니다."+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"오늘은 정말 좋은 정보 하나 알려드리려고 해요~ 눈크게뜨시고 포스팅을 봐주세요"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"오늘 정말 특급 소식하나를 들어서 포스팅 하게되었어요!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"혹시 요즘 얼굴이나 건강등에 걱정이 있으신가요?3"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"혹시 요즘 건강이나 피부 등에 관시이 있으시진 않으신가요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"요즘 어떤 고민이 있으신가요? 저는 건강이나 피부3등에 관심이 많아졌어요."+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"건강은 젊었을때 챙겨야한다는 말 들어보신적 있으신가요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"나이가들어가면서 걱정거리도 같이 늘어가는거 모두 공3감하시는 내용일텐데요. 그래서 좋은 정보 하나 가져왔습니다."+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"여러분 , 혹시 "+model.getBusinessName()+"에 대해 들어보신 내용이 있으신가요?"+CaramelWriterProperties.TAG_P_END,
-				
-		};
-		String content4 [] = {
-				CaramelWriterProperties.TAG_P_START+"오늘은 여러분들께 정말 중요한 것을 알려 드릴려고 합니다."+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"오늘은 중요한 정보하나를 알려드리고자 이렇게 포스팅합니다."+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"오늘은 정말 좋은 정보 하나 알려드리려고4 해요~ 눈크게뜨시고 포스팅을 봐주세요"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"오늘 정말 특급 소식하나를 들어서 포스팅 하게되었어요!"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"혹시 요즘 얼굴이나 건강등에 걱정이 있으45신가요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"혹시 요즘 건강이나 피부 등에 관시이 있으시진 않으신가요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"요즘 어떤 고민이 있으신가요? 저는 건44이나 피부등에 관심이 많아졌어요."+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"건강은 젊었을때 챙겨야한다는 말 들어보신적 있으신4가요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"나이가들어가면서 걱정거리도 같이 늘어가4는거 모두 4공감하시는 내용일텐데요. 그래서 좋은 정보 하나 가져왔습니다."+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"여러분 , 혹시 "+model.getBusinessName()+"에 대해 들어보신 내용이 있으신가요?"+CaramelWriterProperties.TAG_P_END,
-				
-		};
-		contents.add(content1[random.nextInt(content1.length)]+CaramelWriterProperties.MARGIN+"\n\n\n");
-		contents.add(content2[random.nextInt(content2.length)]+CaramelWriterProperties.MARGIN+"\n\n\n");
-		contents.add(content3[random.nextInt(content3.length)]+CaramelWriterProperties.MARGIN+"\n\n\n");
-		contents.add(content4[random.nextInt(content4.length)]+CaramelWriterProperties.MARGIN+"\n\n\n");
-		
-		return contents;
 	}
 	
 	private static String create_title(Model2Caramel model){
@@ -147,14 +62,23 @@ public class Util2Hospital {
 		};
 		
 		String noun[] = {
-				"전국 최고","제일 잘 나가", "베스트 오브 베스트","굿 굿 !",", 여기 매우 유명","매우 저렴","전국 최저가","전국 최고의 기술","최첨단 장비 도입"
+				"전국 최고","제일 잘 나가","이제부터 여기 내 단골","마음에 쏘옥~","완전 마음에 들음","참말로 좋아부러~","참말로 좋아요~","진심 최고~!","여기에 맡기세요","진심 좋아요","지금 이벤트중~" ,"최고중에 최고" ,"베스트 오브 베스트","굿 굿 !",", 여기 매우 유명","매우 저렴","전국 최저가","전국 최고의 기술","최첨단 장비 도입"
 		};
-		String title [] = {
-				CaramelWriterProperties.TAG_P_START_TITLE+""+businessName +"에서 하는 "+ keyword + " " +noun[random.nextInt(noun.length)] +CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START_TITLE+""+keyword+" "+ businessName + ""+inn[random.nextInt(inn.length)] +verb[random.nextInt(verb.length)]+CaramelWriterProperties.TAG_P_END,
+		String titles [] = {
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+businessName +"에서 하는 "+ keyword + " " +noun[random.nextInt(noun.length)] +CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START_TITLE+"@@"+keyword+" "+ businessName + ""+inn[random.nextInt(inn.length)] +verb[random.nextInt(verb.length)]+CaramelWriterProperties.TAG_P_END,
 		};
 		
-		return title[random.nextInt(title.length)]+CaramelWriterProperties.MARGIN+"\n\n\n";
+		String detail_keyword = model.getDetail_keyword();
+		String imsi = titles[random.nextInt(titles.length)]+CaramelWriterProperties.MARGIN+"\n\n\n";
+		String title=imsi;
+		if(!detail_keyword.equals("")){
+			title = imsi.replace("@@", "[ "+detail_keyword+" ]");
+		}else{
+			title = imsi.replace("@@", "");
+		}
+		
+		return title;
 	}
 	
 	private static ArrayList<String> create_subject(Model2Caramel model){
@@ -164,18 +88,40 @@ public class Util2Hospital {
 		
 		Random random = new Random();
 		
-		ArrayList<String> contents = create_content_speed(model);
+		String reason_front[]={
+				"왜 "+businessName +"의 "+ keyword+"가 ",
+				"어찌하여 "+businessName +"의 "+ keyword+"가 ",
+				"어떻게하여 "+businessName +"의 "+ keyword+"가 ",
+				"이곳 "+businessName +"의 "+ keyword+"가 ",
+				"이곳이 왜 "+businessName +"의 "+ keyword+"가 ",
+				"어떻게 "+businessName +"의 "+ keyword+"가 ",
+				"왜 이렇게 "+businessName +"의 "+ keyword+"가 ",
+		};
+		String reason_back[]={
+				"최고라는 소문이 자자 한 걸까요?",
+				"최고라는 소문이 난 걸까요?",
+				"전국 탑클래스라는 소문이 났는지 궁금하지 않으세요?",
+				"왜 전국최고라는 소문이 낫는지 궁금하지 않으세요?",
+				"어떻게 하길래 소문이 났을까요?",
+				"얼마나 잘하길래 이렇게 좋은 소문이 났을까요?",
+				"어떤게 좋아서 사람들이 이렇게 좋다고 말할까요?",
+				"어떤것을 서비스하길래 이렇게 좋은 소문이 날까요?",
+				"어떤것을 서비스하길래 사람들이 좋다고 말을 할까요?",
+		};
 		
 		String subject_reason [] = {
-				CaramelWriterProperties.TAG_P_START+"왜 "+businessName +"의 "+ keyword + "가 최고라는 소문이 자자 한 걸까요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"어찌하여 "+businessName +"의 "+ keyword + "가 최고라는 소문이 난 걸까요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"왜 "+businessName +"의 "+ keyword + "가 전국 탑클래스라는 소문이 났는지 궁금하지 않으세요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"이곳 "+businessName +"의 "+ keyword+ "가 왜 전국최고라는 소문이 낫는지 궁금하지 않으세요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"잘한다고 소문난 "+businessName +"의 "+ keyword + "어떻게 하길래 소문이 났을까요?"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+reason_front[random.nextInt(reason_front.length)]+reason_back[random.nextInt(reason_back.length)]+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+reason_front[random.nextInt(reason_front.length)]+reason_back[random.nextInt(reason_back.length)]+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+reason_front[random.nextInt(reason_front.length)]+reason_back[random.nextInt(reason_back.length)]+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+reason_front[random.nextInt(reason_front.length)]+reason_back[random.nextInt(reason_back.length)]+CaramelWriterProperties.TAG_P_END,
 				
 				CaramelWriterProperties.TAG_P_START+"실력 좋기로 소문난 "+keyword +" "+ businessName + ", 평소에도 많이 들었었는데요. 지금부터 자세히 알아보도록 하겠습니다."+CaramelWriterProperties.TAG_P_END,
 				CaramelWriterProperties.TAG_P_START+"다들 아시죠 ? 전국 최고로 소문난 "+keyword +", "+ businessName + "에 대해 포스팅 하도록 할게요"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"소문난 병원! "+keyword +" "+ businessName + ", 이곳이 왜 유명한지 전격 해부했습니다. "+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"예뻐지기 원하는 분들에게 유명한 곳! "+keyword +" "+ businessName + ", 이곳이 왜 유명한지 전격 해부했습니다. "+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"요즘 성형외과를 찾으시지는 않으세요? "+keyword +" "+ businessName + ", 이곳은 많은사람들이 추천하는곳이예요^^ "+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"요즘 성형외과를 찾으시지는 않으세요? "+keyword +" "+ businessName + ", 이곳은 사람들이 많이 추천하는 곳이랍니다~ "+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"요즘 성형외과를 찾으시지는 않으세요? "+keyword +" "+ businessName + ", 이곳이 바로 사람들이 그렇게도 추천하는 곳이랍니다. "+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"요즘 성형외과를 찾으시지는 않으세요? "+keyword +" "+ businessName + ", 이곳에서 고민상담 받아보시는게 어떠세요? "+CaramelWriterProperties.TAG_P_END,
 		};
 		
 		
@@ -200,16 +146,20 @@ public class Util2Hospital {
 		
 		
 		String subject_place [] = {
-				CaramelWriterProperties.TAG_P_START+"잘하기로 소문난 "+keyword +" "+ businessName + ", 어디에 위치해 있을까요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"최고의 실력을 가진 "+keyword +" "+ businessName + ", 어디에있는지 아시나요?"+CaramelWriterProperties.TAG_P_END,
-				CaramelWriterProperties.TAG_P_START+"이곳은 정말 강추해요^^ "+keyword +" "+ businessName + ", 어디에 있는지 확인해 보세요 !"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"잘하기로 소문난 "+keyword +" "+ businessName + ", 어떻게 이벤트에 응모할수있을까요?"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"최고의 실력을 가진 "+keyword +" "+ businessName + ", 어떻게 더 자세한 내용을 찾아볼수있을까요?"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"이곳은 정말 강추해요^^ "+keyword +" "+ businessName + ", 어떻게 더 자세히 알 수 있을지 궁금하시지 않으세요?"+CaramelWriterProperties.TAG_P_END,
+				CaramelWriterProperties.TAG_P_START+"이쯤 되면 여기 "+keyword +" "+ businessName + ", 어떻게 더 자세히 알 수 있을지 궁금하시지 않으세요?"+CaramelWriterProperties.TAG_P_END,
 		};
 		
 	
-		subject.add(subject_reason[random.nextInt(subject_reason.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
-		subject.add(subject_characteristic[random.nextInt(subject_characteristic.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
-		subject.add(subject_advantages[random.nextInt(subject_advantages.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
-		subject.add(subject_place[random.nextInt(subject_place.length)] +CaramelWriterProperties.MARGIN+"\n\n\n");
+		subject.add(subject_reason[random.nextInt(subject_reason.length)] +CaramelWriterProperties.MARGIN_2+"\n\n\n");
+		subject.add(Util2Common.commonTextReason(keyword, businessName)+CaramelWriterProperties.MARGIN+"\n\n\n");
+		subject.add(subject_characteristic[random.nextInt(subject_characteristic.length)] +CaramelWriterProperties.MARGIN_2+"\n\n\n");
+		subject.add(Util2Common.commonTextSpecial(keyword, businessName)+CaramelWriterProperties.MARGIN+"\n\n\n");
+		subject.add(subject_advantages[random.nextInt(subject_advantages.length)] +CaramelWriterProperties.MARGIN_2+"\n\n\n");
+		subject.add(Util2Common.commonTextAdvantage(keyword, businessName)+CaramelWriterProperties.MARGIN+"\n\n\n");
+		subject.add(subject_place[random.nextInt(subject_place.length)] +CaramelWriterProperties.MARGIN_2+"\n\n\n");
 		
 		return subject;
 	}
