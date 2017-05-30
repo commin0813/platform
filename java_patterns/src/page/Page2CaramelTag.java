@@ -189,7 +189,9 @@ public class Page2CaramelTag extends JFrame {
 		StringTokenizer st = new StringTokenizer(tag_text, ",");
 		if(tag_text.contains(",")){
 			 st = new StringTokenizer(tag_text, ",");
-		}else if(tag_text.contains("/")){
+			 
+		}
+		if(tag_text.contains("/")){
 			 st = new StringTokenizer(tag_text, "/");
 		}
 		
@@ -197,7 +199,10 @@ public class Page2CaramelTag extends JFrame {
 		StringBuffer sb = new StringBuffer();
 		
 		while(st.hasMoreTokens()){
-			sb.append("#"+st.nextToken()+" ,");
+			String str = st.nextToken().trim();
+			str.replaceAll(" ", "");
+			str = str.replaceAll("\\p{Z}", "");
+			sb.append(str+" ,");
 		}
 		ta_tag_after.setText(sb.toString());
 	}
